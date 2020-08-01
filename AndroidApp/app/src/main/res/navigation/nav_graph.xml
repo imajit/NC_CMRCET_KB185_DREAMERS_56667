@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homepage">
+
+    <fragment
+        android:id="@+id/homepage"
+        android:name="com.example.sih2020.fragments.Homepage"
+        android:label="Home"
+        tools:layout="@layout/fragment_homepage" >
+        <action
+            android:id="@+id/homeToQuestionList"
+            app:destination="@id/questionnaireFragment" />
+        <action
+            android:id="@+id/HomeToPendingSurvey"
+            app:destination="@id/pendingSurveys" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionnaireFragment"
+        android:name="com.example.sih2020.fragments.QuestionnaireFragment"
+        android:label="Questionnaire"
+        tools:layout="@layout/fragment_questionnaire" >
+        <action
+            android:id="@+id/QuestionListToAnswer"
+            app:destination="@id/answerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.sih2020.fragments.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.sih2020.fragments.RegisterFragment"
+        android:label="Register"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/answerFragment"
+        android:name="com.example.sih2020.fragments.AnswerFragment"
+        android:label="Answer"
+        tools:layout="@layout/fragment_answer" >
+        <argument
+            android:name="questionDetail"
+            app:argType="string"/>
+        <action
+            android:id="@+id/AnswerToQuestionnaire"
+            app:destination="@id/questionnaireFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pendingSurveys"
+        android:name="com.example.sih2020.fragments.PendingSurveys"
+        android:label="Yet To Be Uploaded"
+        tools:layout="@layout/fragment_pending_surveys" />
+</navigation>

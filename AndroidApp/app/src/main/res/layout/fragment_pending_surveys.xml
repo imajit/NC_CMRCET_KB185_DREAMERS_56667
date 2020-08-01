@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".fragments.PendingSurveys">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_pendingSurvey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/pendingsurvey" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/FloatingButtonSubmitPendingSurvey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@color/colorAccent"
+        android:src="@drawable/done"
+        android:visibility="invisible"
+        android:layout_gravity="bottom|center_horizontal"/>
+
+
+
+
+
+
+
+</FrameLayout>
