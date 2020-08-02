@@ -1,11 +1,18 @@
 <div *ngIf="this.dataReceived.length!==1">
-  <mat-form-field>
-    <mat-label>Filter</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
-  </mat-form-field>
+  <div class="row">
+    <div class="col-md-6">
+      <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+      </mat-form-field>
+    </div>
+    <div class="col-md-6 ">
+      <button style="float: right;" mat-raised-button color="primary" (click)="exporter.exportTable('xlsx', {fileName:'Recent Review', sheet: 'Sheet1', Props: {Author: 'Talha'}})"> Export to Excel</button>
+    </div>
+  </div>
   <div class="mat-elevation-z8">
     
-      <table mat-table [dataSource]="dataSource" matSort>
+      <table mat-table matTableExporter  [dataSource]="dataSource" #exporter="matTableExporter" matSort>
             
         <!-- Progress Column -->
         <ng-container matColumnDef="school_name">
