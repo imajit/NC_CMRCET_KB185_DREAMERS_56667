@@ -20,7 +20,9 @@ fun sentimentOnList(qList : MutableList<qa>, schoolId: String, record:Records, r
         if(!dialog.isShowing) {
             dialog.show()
         }
-        analysisScore.analyse(context,it,dialog)
+        if(it.analysis.equals((0).toDouble())) {
+            analysisScore.analyse(context, it, dialog)
+        }
     }
     findSchoolAndUpdateRecord(schoolId,record,recordBitmap,context)
 

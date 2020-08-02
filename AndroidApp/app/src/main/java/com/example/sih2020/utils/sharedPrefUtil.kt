@@ -5,6 +5,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.core.content.ContentProviderCompat.requireContext
 import com.example.sih2020.classes.PendingClass
+import com.google.firebase.database.snapshot.EmptyNode
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
@@ -18,8 +19,13 @@ fun loadData(context: Context): PendingClass {
 
     //pendingClass = gson.fromJson(jsonstring,type)
     var pc = PendingClass()
-    pc = gson.fromJson(jsonstring, type)
-    Log.d("Log", "loadData: ${pc.schoolId} ${pc.records.officerId}")
+    try {
+        pc = gson.fromJson(jsonstring, type)
+        Log.d("Log", "loadData: ${pc.schoolId} ${pc.records.officerId}")
+    }catch (e: Exception){
+        pc.schoolId = "-1"
+        return pc
+    }
 
     if (pc == null) {
         Toast.makeText(context, "Pending class is null", Toast.LENGTH_SHORT).show()

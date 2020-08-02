@@ -31,6 +31,9 @@
         <action
             android:id="@+id/QuestionListToAnswer"
             app:destination="@id/answerFragment" />
+        <action
+            android:id="@+id/action_questionnaireFragment_to_MCQAnswerFragment"
+            app:destination="@id/MCQAnswerFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
