@@ -76,8 +76,8 @@ class AnswerFragment : BaseFragment(){
                         val questionEntity = QuestionEntity(questiontext.toString(),inputEditText.toString())
                         context?.let {
                             var qObj = qa()
-                            qObj.analysis = "0"
-                            qObj.answer = inputEditText.toString()
+                            qObj.analysis = 0.0
+                            qObj.answer = inputEditText.text.toString()
                             qObj.question = Questionnaire.questionnaireQuestions[requireArguments().getInt("QuestionNumber")]
                             qObj.category = Questionnaire.questionnaireCategory[requireArguments().getInt("QuestionNumber")]
                             Constants.qList.add(qObj)

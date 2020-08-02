@@ -71,8 +71,9 @@ class BottomSheetDialog() : BottomSheetDialogFragment() {
                 //Toast.makeText(context, "Check how to proceed to questionnaire", Toast.LENGTH_SHORT).show()
                 verifyInput(
                     view.findViewById(R.id.schoolId),
-                    view.findViewById(R.id.overallReview),
-                    view.findViewById(R.id.officerId)
+                    view.findViewById(R.id.officerId),
+                    view.findViewById(R.id.overallReview)
+
                 )
             }
             else{
@@ -222,6 +223,7 @@ class BottomSheetDialog() : BottomSheetDialogFragment() {
         Constants.gpsSnap = gpsSnapshot
         Constants.overallReview = oRev
         Constants.creationDate = createDate
+        Constants.photo = photo
         this@BottomSheetDialog.dismiss()
         findNavController().navigate(R.id.homeToQuestionList)
     }

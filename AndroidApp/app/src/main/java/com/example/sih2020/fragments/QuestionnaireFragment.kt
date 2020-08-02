@@ -24,6 +24,7 @@ import com.example.sih2020.dbClasses.model.pendingsurvey.PendingSurveyEntity
 
 import com.example.sih2020.utils.Constants
 import com.example.sih2020.utils.onQuestionclicked
+import com.example.sih2020.utils.sentimentOnList
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.coroutines.launch
 
@@ -85,8 +86,11 @@ class QuestionnaireFragment : BaseFragment(), onQuestionclicked {
         record.overallReview = Constants.overallReview
         record.questions = Constants.qList
         Constants.mapList.add(mapOf(Pair(Constants.schoolId,record)))
+        sentimentOnList(record.questions,Constants.schoolId,record,Constants.photo,requireContext())
 
-        launch {
+
+
+        /*launch {
             context?.let {
                 if(PendingSurveyDatabase(it).getPendingSurveyDao().getAllList().isEmpty())
                 {
@@ -95,13 +99,13 @@ class QuestionnaireFragment : BaseFragment(), onQuestionclicked {
                     Toast.makeText(requireContext(), "saved to room", Toast.LENGTH_SHORT).show()
                 }
                 else{
-                    /**TODO
-                     * Update the else part as required to append or update any existing record
-                     */
+                    *//**TODO
+         * Update the else part as required to append or update any existing record
+         *//*
                 }
 
             }
-        }
+        }*/
 
 
 
@@ -111,30 +115,30 @@ class QuestionnaireFragment : BaseFragment(), onQuestionclicked {
     }
 
     override fun Onclicked(question: String, view: View,position: Int) {
-            when(view.id)
-            {
-               R.id.cardviewQuestion-> {
-                   val bundle = bundleOf("QuestionNumber" to position)
-                   if(Constants.questionsCount == position){
-                   navController!!.navigate(R.id.QuestionListToAnswer,bundle)
-                   //
-                   }else{
-                       Toast.makeText(requireContext(),"Submit Question ${Constants.questionsCount+1} first ",Toast.LENGTH_LONG).show()
-                   }
-               }
-
-                R.id.submitButton-> {
-                    if(Constants.questionsCount == Constants.qList.size){
-
-                    }else{
-                        Toast.makeText(requireContext(),"Submit All Questions", Toast.LENGTH_SHORT).show()
-                    }
+        when(view.id)
+        {
+            R.id.cardviewQuestion-> {
+                val bundle = bundleOf("QuestionNumber" to position)
+                if(Constants.questionsCount == position){
+                    navController!!.navigate(R.id.QuestionListToAnswer,bundle)
+                    //
+                }else{
+                    Toast.makeText(requireContext(),"Submit Question ${Constants.questionsCount+1} first ",Toast.LENGTH_LONG).show()
                 }
+            }
+
+            R.id.submitButton-> {
+                if(Constants.questionsCount == Constants.qList.size){
+
+                }else{
+                    Toast.makeText(requireContext(),"Submit All Questions", Toast.LENGTH_SHORT).show()
+                }
+            }
 //                {
 //                   val action= QuestionnaireFragmentDirections.QuestionListToAnswer(question)
 //                    view.findNavController().navigate(action)
 //                }
-            }
+        }
 
     }
 
