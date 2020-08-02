@@ -62,7 +62,7 @@ class QuestionnaireAdapter(private val listner: onQuestionclicked):RecyclerView.
         if(holder.adapterPosition < Constants.qList.size){
             holder.itemView.cardviewQuestion.findViewById<LinearLayout>(R.id.questionCard).setBackgroundColor(Color.parseColor("#80010FFF"))
         }else{
-            holder.itemView.cardviewQuestion.findViewById<LinearLayout>(R.id.questionCard).setBackgroundColor(Color.parseColor("#B4E7FD"))
+            holder.itemView.cardviewQuestion.findViewById<LinearLayout>(R.id.questionCard).setBackgroundColor(Color.parseColor("#90caf9"))
         }
     }
 
