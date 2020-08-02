@@ -32,6 +32,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="feedBack">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-229" />
+                            <option name="y" value="-119" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="homepage">
                     <value>
                       <LayoutPositions>
@@ -43,6 +55,11 @@
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="HomeToMCQ">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="HomeToPendingSurvey">
                               <value>
                                 <LayoutPositions />

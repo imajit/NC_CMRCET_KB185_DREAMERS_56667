@@ -22,6 +22,9 @@
         <action
             android:id="@+id/HomeToMCQ"
             app:destination="@id/MCQAnswerFragment" />
+        <action
+            android:id="@+id/HomeToFeedback"
+            app:destination="@id/feedBack" />
     </fragment>
     <fragment
         android:id="@+id/questionnaireFragment"
@@ -65,4 +68,9 @@
         android:name="com.example.sih2020.fragments.MCQAnswerFragment"
         android:label="fragment_m_c_q_answer"
         tools:layout="@layout/fragment_m_c_q_answer" />
+    <fragment
+        android:id="@+id/feedBack"
+        android:name="com.example.sih2020.fragments.FeedBack"
+        android:label="FeedBack"
+        tools:layout="@layout/fragment_feed_back" />
 </navigation>
