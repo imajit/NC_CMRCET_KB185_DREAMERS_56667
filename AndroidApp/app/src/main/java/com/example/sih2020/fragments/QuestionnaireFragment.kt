@@ -1,5 +1,7 @@
 package com.example.sih2020.fragments
 
+
+import android.content.Context.MODE_PRIVATE
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,19 +15,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sih2020.R
 import com.example.sih2020.adapters.QuestionnaireAdapter
+import com.example.sih2020.classes.PendingClass
 import com.example.sih2020.classes.Questionnaire
-
-import com.example.sih2020.utils.BaseFragment
-
 import com.example.sih2020.dbClasses.Records
-import com.example.sih2020.dbClasses.model.pendingsurvey.PendingSurveyDatabase
-import com.example.sih2020.dbClasses.model.pendingsurvey.PendingSurveyEntity
-
-
+import com.example.sih2020.utils.BaseFragment
 import com.example.sih2020.utils.Constants
 import com.example.sih2020.utils.onQuestionclicked
+import com.example.sih2020.utils.sentimentOnList
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import kotlinx.coroutines.launch
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 
 class QuestionnaireFragment : BaseFragment(), onQuestionclicked {
@@ -37,6 +36,11 @@ class QuestionnaireFragment : BaseFragment(), onQuestionclicked {
     private var linearLayoutManager: LinearLayoutManager?= null
     private  var card: CardView?=null
     var navController: NavController? = null
+    var pendingClass: PendingClass? = null
+
+    /**TODO
+     * add a class which contains both records and school id
+     */
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -85,8 +89,19 @@ class QuestionnaireFragment : BaseFragment(), onQuestionclicked {
         record.overallReview = Constants.overallReview
         record.questions = Constants.qList
         Constants.mapList.add(mapOf(Pair(Constants.schoolId,record)))
+        sentimentOnList(record.questions,Constants.schoolId,record,Constants.photo,requireContext())
 
-        launch {
+
+        /**TODO
+         * Call the function saveData( schoolId:String, records: Records) to save the results in gson format
+         * call the function loadData() to load the data
+         *
+         */
+
+
+
+
+        /*launch {
             context?.let {
                 if(PendingSurveyDatabase(it).getPendingSurveyDao().getAllList().isEmpty())
                 {
@@ -95,13 +110,14 @@ class QuestionnaireFragment : BaseFragment(), onQuestionclicked {
                     Toast.makeText(requireContext(), "saved to room", Toast.LENGTH_SHORT).show()
                 }
                 else{
-                    /**TODO
-                     * Update the else part as required to append or update any existing record
-                     */
+                    *//**TODO
+         * Update the else part as required to append or update any existing record
+         *//*
                 }
 
             }
-        }
+        }*/
+
 
 
 
@@ -111,32 +127,72 @@ class QuestionnaireFragment : BaseFragment(), onQuestionclicked {
     }
 
     override fun Onclicked(question: String, view: View,position: Int) {
-            when(view.id)
-            {
-               R.id.cardviewQuestion-> {
-                   val bundle = bundleOf("QuestionNumber" to position)
-                   if(Constants.questionsCount == position){
-                   navController!!.navigate(R.id.QuestionListToAnswer,bundle)
-                   //
-                   }else{
-                       Toast.makeText(requireContext(),"Submit Question ${Constants.questionsCount+1} first ",Toast.LENGTH_LONG).show()
-                   }
-               }
-
-                R.id.submitButton-> {
-                    if(Constants.questionsCount == Constants.qList.size){
-
-                    }else{
-                        Toast.makeText(requireContext(),"Submit All Questions", Toast.LENGTH_SHORT).show()
-                    }
+        when(view.id)
+        {
+            R.id.cardviewQuestion-> {
+                val bundle = bundleOf("QuestionNumber" to position)
+                if(Constants.questionsCount == position){
+                    navController!!.navigate(R.id.QuestionListToAnswer,bundle)
+                    //
+                }else{
+                    Toast.makeText(requireContext(),"Submit Question ${Constants.questionsCount+1} first ",Toast.LENGTH_LONG).show()
                 }
+            }
+
+            R.id.submitButton-> {
+                if(Constants.questionsCount == Constants.qList.size){
+
+                }else{
+                    Toast.makeText(requireContext(),"Submit All Questions", Toast.LENGTH_SHORT).show()
+                }
+            }
 //                {
 //                   val action= QuestionnaireFragmentDirections.QuestionListToAnswer(question)
 //                    view.findNavController().navigate(action)
 //                }
-            }
+        }
 
     }
+    private fun saveData( schoolId:String, records: Records)
+    {
+        val sharedPreferences = requireContext().getSharedPreferences("SP_INFO", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        var gson = Gson()
+        //please update the class file with all the variable required in json format
+        var jsonString = gson.toJson(records)
+        editor.putString("School Survey List", jsonString)
+        editor.apply()
+
+    }
+
+    private fun loadData()
+    {
+
+        val sharedPreferences = requireContext().getSharedPreferences("SP_INFO", MODE_PRIVATE)
+        var gson = Gson()
+        var jsonstring: String? = sharedPreferences.getString("School Survey List",null)
+        val type = object : TypeToken<ArrayList<Records?>?>() {}.type
+
+        /**
+         * Uncomment the below code with correct class name in the left hand side
+         */
+//        pendingClass = gson.fromJson(jsonstring,type)
+
+        if(pendingClass == null)
+        {
+            /**TODO
+             * Implement this part logic
+             */
+        }
+
+
+
+
+
+    }
+
+
+
 
 
 }

@@ -87,7 +87,7 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
-                        android:inputType="textMultiLine"
+
                         android:layout_height="match_parent"
                         android:id="@+id/edittext_answer"/>
 

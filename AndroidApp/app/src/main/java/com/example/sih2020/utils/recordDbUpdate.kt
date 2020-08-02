@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.util.Log
 import android.widget.Toast
 import com.example.sih2020.R
 import com.example.sih2020.api.faceRecog
@@ -23,8 +24,27 @@ var dRef = database.reference
 var storage = FirebaseStorage.getInstance()
 var sRef = storage.reference
 
-fun updateRecordToDb(schoolIndex: String, record: Records){
-    dRef.child("School").child(schoolIndex).setValue(record)
+fun updateRecordToDb(schoolIndex: String, record: Records,context: Context){
+    val recRef = dRef.child("School").child(schoolIndex).child("Records")
+    val builder: AlertDialog.Builder = AlertDialog.Builder(context)
+    builder.setCancelable(false)
+    builder.setView(R.layout.progress_dialog)
+    val dialog: AlertDialog = builder.create()
+    dialog.setTitle("Updating Record")
+    dialog.show()
+    val listener = object : ValueEventListener{
+        override fun onCancelled(error: DatabaseError) {
+            dialog.dismiss()
+        }
+
+        override fun onDataChange(snapshot: DataSnapshot) {
+            Log.d("Task 123", "onDataChange: ${snapshot.childrenCount}")
+            recRef.child(snapshot.childrenCount.toString()).setValue(record)
+            dialog.dismiss()
+
+        }
+    }
+    recRef.addListenerForSingleValueEvent(listener)
 }
 fun faceRecognise(schoolIndex: String,record: Records,recordBitmap: Bitmap,context: Context){
     val builder: AlertDialog.Builder = AlertDialog.Builder(context)
@@ -44,7 +64,8 @@ fun faceRecognise(schoolIndex: String,record: Records,recordBitmap: Bitmap,conte
             dialog.dismiss()
             var faceRec = faceRecog()
             if(faceRec.start(registerBitmap,recordBitmap) > 80){
-                updateRecordToDb(schoolIndex,record)
+                updateRecordToDb(schoolIndex,record,context)
+                Toast.makeText(context, "Face matched", Toast.LENGTH_LONG).show()
             }else{
                 Toast.makeText(context, "Face not matching", Toast.LENGTH_LONG).show()
             }
@@ -71,8 +92,13 @@ fun checkGpsRange(schoolIndex: String, record: Records,recordBitmap: Bitmap, con
         }
 
         override fun onDataChange(snapshot: DataSnapshot) {
-            var gpsVar: gpsCoordinates = gpsCoordinates()
-            gpsVar = snapshot.value as gpsCoordinates
+            val gpsVar: gpsCoordinates = gpsCoordinates()
+            val x = snapshot.value as Map<*, *>
+            gpsVar.lat = (x["lat"]).toString().toDouble()
+            gpsVar.long = (x["long"]).toString().toDouble()
+
+            Log.d("GPS", "onDataChange: ${snapshot.value} ${record.gpsLocation.lat} ${record.gpsLocation.long}")
+
             if(inGpsRange(gpsVar,record.gpsLocation)){
                 dialog.dismiss()
                 faceRecognise(schoolIndex, record,recordBitmap, context)
