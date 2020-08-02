@@ -17,9 +17,10 @@
         android:id="@+id/FloatingButtonSubmitPendingSurvey"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:backgroundTint="@color/colorAccent"
+        app:backgroundTint="@color/colorPrimary"
         android:src="@drawable/done"
         android:visibility="invisible"
+        android:layout_margin="10dp"
         android:layout_gravity="bottom|center_horizontal"/>
 
 

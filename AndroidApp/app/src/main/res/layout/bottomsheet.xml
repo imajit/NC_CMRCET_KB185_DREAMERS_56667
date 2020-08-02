@@ -31,14 +31,18 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="School Id">
+                android:hint="School Id"
+                android:outlineSpotShadowColor="@color/colorPrimary"
+                android:theme="@style/BlueCheck"
+                app:boxStrokeColor="@color/colorPrimary">
 
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/schoolId"
-
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+
+                    android:layout_height="match_parent"
+                    android:theme="@style/CursorColor"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -52,12 +56,16 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Officer ID">
+                android:hint="Officer ID"
+                android:outlineSpotShadowColor="@color/colorPrimary"
+                android:theme="@style/BlueCheck"
+                app:boxStrokeColor="@color/colorPrimary">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/officerId"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:theme="@style/CursorColor"/>
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -70,14 +78,21 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Overall Review">
+                android:hint="Overall Review"
+                android:outlineSpotShadowColor="@color/colorPrimary"
+                android:theme="@style/BlueCheck"
+                app:boxStrokeColor="@color/colorPrimary">
 
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/overallReview"
 
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:theme="@style/CursorColor"
+
+                    android:textColor="@color/Black"
+                    android:textColorHighlight="@color/colorPrimary"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -95,7 +110,7 @@
                 android:drawableEnd="@drawable/face"
                 android:paddingTop="10dp"
                 android:text="Add Face Image"
-                app:backgroundTint="@color/ButtonColour"
+                android:backgroundTint="@color/colorPrimary"
                 android:visibility="visible" />
 
             <LinearLayout
@@ -109,8 +124,8 @@
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/arrow_right"
                 android:paddingTop="10dp"
-                app:backgroundTint="@color/ButtonColour"
                 android:text="To Questionnaire"
+                android:backgroundTint="@color/colorPrimary"
                 android:visibility="visible" />
 
             <LinearLayout

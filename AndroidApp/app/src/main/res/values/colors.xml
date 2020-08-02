@@ -3,6 +3,7 @@
     <color name="colorPrimary">#2196f3</color>
     <color name="colorPrimaryDark">#02457A</color>
     <color name="colorAccent">#03DAC5</color>
-    <color name="ButtonColour">#8C9EFF</color>
-    <color name="NonAnswerdCardColor">#90caf9</color>
+    <color name="Button">#B4E7FD</color>
+    <color name="white">#FFFFFF</color>
+    <color name="Black">#101010</color>
 </resources>
