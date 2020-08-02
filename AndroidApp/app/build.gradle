@@ -58,6 +58,8 @@ dependencies {
     //For Biometrics
     implementation 'androidx.biometric:biometric:1.0.1'
 
+    // json
+    implementation "com.google.code.gson:gson:2.8.2"
 
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"

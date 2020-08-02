@@ -1,5 +1,8 @@
 package com.example.sih2020.fragments
 
+
+import android.content.Context.MODE_PRIVATE
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,19 +16,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sih2020.R
 import com.example.sih2020.adapters.QuestionnaireAdapter
+import com.example.sih2020.classes.PendingClass
 import com.example.sih2020.classes.Questionnaire
-
-import com.example.sih2020.utils.BaseFragment
-
 import com.example.sih2020.dbClasses.Records
-import com.example.sih2020.dbClasses.model.pendingsurvey.PendingSurveyDatabase
-import com.example.sih2020.dbClasses.model.pendingsurvey.PendingSurveyEntity
-
-
+import com.example.sih2020.utils.BaseFragment
 import com.example.sih2020.utils.Constants
 import com.example.sih2020.utils.onQuestionclicked
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import kotlinx.coroutines.launch
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import java.lang.reflect.Type
 
 
 class QuestionnaireFragment : BaseFragment(), onQuestionclicked {
@@ -37,6 +37,7 @@ class QuestionnaireFragment : BaseFragment(), onQuestionclicked {
     private var linearLayoutManager: LinearLayoutManager?= null
     private  var card: CardView?=null
     var navController: NavController? = null
+    var pendingClass: PendingClass? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -86,22 +87,12 @@ class QuestionnaireFragment : BaseFragment(), onQuestionclicked {
         record.questions = Constants.qList
         Constants.mapList.add(mapOf(Pair(Constants.schoolId,record)))
 
-        launch {
-            context?.let {
-                if(PendingSurveyDatabase(it).getPendingSurveyDao().getAllList().isEmpty())
-                {
-                    val list = PendingSurveyEntity(Constants.schoolId,record)
-                    PendingSurveyDatabase(it).getPendingSurveyDao().addList(list)
-                    Toast.makeText(requireContext(), "saved to room", Toast.LENGTH_SHORT).show()
-                }
-                else{
-                    /**TODO
-                     * Update the else part as required to append or update any existing record
-                     */
-                }
+        /**TODO
+         * Call the function saveData( schoolId:String, records: Records) to save the results in gson format
+         * call the function loadData() to load the data
+         *
+         */
 
-            }
-        }
 
 
 
@@ -137,6 +128,33 @@ class QuestionnaireFragment : BaseFragment(), onQuestionclicked {
             }
 
     }
+    private fun saveData( schoolId:String, records: Records)
+    {
+        val sharedPreferences = requireContext().getSharedPreferences("SP_INFO", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        var gson = Gson()
+        //please update the class file with all the variable required in json format
+        var jsonString = gson.toJson(records)
+        editor.putString("School Survey List", jsonString)
+        editor.apply()
+
+    }
+
+    private fun loadData()
+    {
+
+        val sharedPreferences = requireContext().getSharedPreferences("SP_INFO", MODE_PRIVATE)
+        var gson = Gson()
+        var jsonstring: String? = sharedPreferences.getString("School Survey List",null)
+      
+
+
+
+
+    }
+
+
+
 
 
 }
