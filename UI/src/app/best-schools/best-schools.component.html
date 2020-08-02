@@ -1,4 +1,5 @@
 <div *ngIf="this.dataReceived.length!==1">
+  
   <div class="row">
     <div class="col-md-6">
       <mat-form-field>
@@ -57,7 +58,7 @@
         <tr class="mat-row" *matNoDataRow>
           <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
         </tr>
-        
+
       </table>
     
       <mat-paginator #paginatorRef [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>

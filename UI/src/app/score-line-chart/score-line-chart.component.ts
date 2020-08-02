@@ -174,12 +174,8 @@ export class ScoreLineChartComponent implements OnInit {
     if(this.selected==='overall'){
       this.fillOverallData();
     }
-    if(this.selected==='hygiene'){
-      this.fillHygieneData();  
-    }
-
-    if(this.selected==='interaction'){
-      this.fillInteractionData();
+    else{
+      this.fillCategoricalData(this.selected);
     }
     
   }
@@ -245,6 +241,35 @@ export class ScoreLineChartComponent implements OnInit {
     this.lineChartData[0].data=overallArray;
     this.lineChartData[0].label="Overall Score";
     this.lineChartLabels=labelArray;
+  }
+
+  fillCategoricalData(category:string){
+    var dataArray:number[]=[];
+        var labelArray:string[]=[];
+        var finalScore:number=0;
+        if(this.dataReceived.length==1){
+          this.dataReceived[0].Records.forEach( res =>{
+            var analysisValue:number=0;
+            var occur:number = 0;
+            res.questions.forEach(data =>{
+              if(data.category==category){
+                // dataArray.push(data.analysis);
+                analysisValue = analysisValue + data.analysis;
+                occur = occur + 1;
+                
+              }
+            })
+            finalScore = +((analysisValue/occur).toFixed(2));
+            var dd:Date = new Date(res.creationDate);
+            var dateString:string = dd.toLocaleDateString();
+            labelArray.push(dateString.toString());
+            dataArray.push(finalScore);
+          })
+        }
+        this.lineChartData[0].data=dataArray;
+        this.lineChartData[0].label=category;
+        this.lineChartLabels=labelArray;
+
   }
 
 }

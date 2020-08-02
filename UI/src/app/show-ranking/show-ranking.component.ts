@@ -17,6 +17,17 @@ export class ShowRankingComponent implements OnInit {
   constructor(private fetchData:FetchDataService,private rankings:RankingService) { }
 
   dataReceived:DbModel[]=[];
+  categoriesArray:string[]=["Infrastructure", 
+                            "Academic Excellence",
+                            "Extra Curricular activities",
+                            "Individual attention",
+                            "Life Skills education",
+                            "Percentage of female students and faculty",
+                            "Facilities for differently abled persons",
+                            "Values Education",
+                            "Hygiene"]
+
+  scoreArray:number[]=[];
   hygieneRankingMapForGraph:Map<number,number> = new Map();
   interactionRankingMapForGraph:Map<number,number> = new Map();
 
@@ -82,30 +93,13 @@ export class ShowRankingComponent implements OnInit {
       // this.hygieneRankingMapForGraph = cloneDeep(this.rankings.getHygieneRankingMap());
       // this.interactionRankingMapForGraph = cloneDeep(this.rankings.getInteractionRankingMap());
       if(this.dataReceived!=null && this.dataReceived.length===1){
-        this.fillHygieneScore();
-        this.fillInteractionScore();
-        this.fillData();
+        this.fillCategoricalData();
       }
 
     })
 
   }
 
-  fillData(){
-    console.log("Fill data called");
-    
-    var dataArray:number[] = [];
-    var labelArray:string[]= [];
-    dataArray.push(this.hygieneScore);
-    labelArray.push('Hygiene');
-    dataArray.push(this.interactionScore);
-    labelArray.push('Interaction');
-
-    this.barChartData[0].data=dataArray;
-    this.barChartData[0].label=this.dataReceived[0].SchoolName;
-    this.barChartData[0].backgroundColor=['green','blue']
-    this.barChartLabels = labelArray;
-  }
 
 
   fillHygieneMap(){
@@ -151,40 +145,31 @@ export class ShowRankingComponent implements OnInit {
 
   }
 
-  fillHygieneScore(){
-    var totalscore:number=0
-    this.dataReceived[0].Records.forEach(res=>{
-      var score:number = 0;
-      res.questions.forEach(data=>{
-        if(data.category=='hygiene'){
-          score = score + data.analysis;
-        }
+  fillCategoricalData(){
+    this.scoreArray=[];
+    var dataArray:number[]=[];
+    var labelArray:string[] = [];
+    this.categoriesArray.forEach(category=>{
+      var finalScore:number = 0;
+      this.dataReceived[0].Records.forEach(res =>{
+        var localScore:number = 0;
+        var occur:number=0
+        res.questions.forEach(data=>{
+          if(data.category==category){
+            localScore = localScore + data.analysis;
+            occur = occur + 1;
+          }
+        })
+        finalScore = finalScore + (+(localScore/occur).toFixed(2));
       })
-      totalscore = totalscore + score;
+      finalScore = +((finalScore/this.dataReceived[0].Records.length).toFixed(2));
+      dataArray.push(finalScore);
+      labelArray.push(category);
     })
-    this.hygieneScore = +((totalscore/this.dataReceived[0].Records.length).toFixed(2));
-    console.log("Hygiene score is ");
-    console.log(this.hygieneScore);
-    
-    
-  }
+    this.barChartData[0].data=dataArray;
+    this.barChartData[0].label=this.dataReceived[0].SchoolName;
+    this.barChartLabels = labelArray;
 
-  fillInteractionScore(){
-    var totalscore:number=0
-    this.dataReceived[0].Records.forEach(res=>{
-      var score:number = 0;
-      res.questions.forEach(data=>{
-        if(data.category=='interaction'){
-          score = score + data.analysis;
-        }
-      })
-      totalscore = totalscore + score;
-    })
-    this.interactionScore = +((totalscore/this.dataReceived[0].Records.length).toFixed(2));
-    console.log("Interaction score is ");
-    console.log(this.interactionScore);
-    
-    
   }
 
 }
