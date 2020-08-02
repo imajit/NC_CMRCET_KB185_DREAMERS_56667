@@ -1,18 +1,24 @@
 package com.example.sih2020.fragments
 
+import android.app.AlertDialog
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.sih2020.R
 import com.example.sih2020.classes.BottomSheetDialog
 import com.example.sih2020.classes.BottomSheetRegister
+import com.example.sih2020.utils.Constants
+import com.example.sih2020.utils.loadData
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.card.MaterialCardView
+
 
 class Homepage : Fragment(), View.OnClickListener {
 
@@ -80,7 +86,32 @@ class Homepage : Fragment(), View.OnClickListener {
                 }
             }
 
-            R.id.cardview_oldsurvey->navController!!.navigate(R.id.HomeToPendingSurvey)
+            R.id.cardview_oldsurvey-> {
+                val builder: AlertDialog.Builder = AlertDialog.Builder(context)
+                builder.setCancelable(false)
+                builder.setView(R.layout.progress_dialog)
+                val dialog: AlertDialog = builder.create()
+                dialog.setTitle("Loading . . .")
+                dialog.show()
+                Constants.pendingSurveys = loadData(requireContext())
+                object : CountDownTimer(500, 1000) {
+                    override fun onTick(millisUntilFinished: Long) {
+
+                    }
+
+                    override fun onFinish() {
+                        dialog.dismiss()
+                        if(Constants.pendingSurveys.schoolId.isEmpty()){
+                            Toast.makeText(context,"No Surveys Found",Toast.LENGTH_LONG).show()
+                        }else {
+                            navController!!.navigate(R.id.HomeToPendingSurvey)
+                        }
+                    }
+                }.start()
+
+
+
+            }
 
             R.id.seePreviousSurvey->navController!!.navigate(R.id.homeToQuestionList)
 

@@ -3,6 +3,7 @@ package com.example.sih2020.fragments
 
 import android.content.Context.MODE_PRIVATE
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import androidx.cardview.widget.CardView
 import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sih2020.R
@@ -89,11 +91,12 @@ class QuestionnaireFragment : BaseFragment(), onQuestionclicked {
         record.overallReview = Constants.overallReview
         record.questions = Constants.qList
         Constants.mapList.add(mapOf(Pair(Constants.schoolId,record)))
-        sentimentOnList(record.questions,Constants.schoolId,record,Constants.photo,requireContext())
-
+        //sentimentOnList(record.questions,Constants.schoolId,record,Constants.photo,requireContext())
+        pendingClass = PendingClass()
         pendingClass?.records = record
         pendingClass?.schoolId = Constants.schoolId
 
+        saveData(pendingClass!!)
         /**TODO
          * Call the function saveData( schoolId:String, records: Records) to save the results in gson format
          * call the function loadData() to load the data
@@ -148,25 +151,29 @@ class QuestionnaireFragment : BaseFragment(), onQuestionclicked {
         var jsonString = gson.toJson(pending)
         editor.putString("School Survey List", jsonString)
         editor.apply()
+        findNavController().popBackStack(R.id.homepage,false)
 
     }
 
-    private fun loadData()
-    {
+    private fun loadData(): PendingClass {
 
         val sharedPreferences = requireContext().getSharedPreferences("SP_INFO", MODE_PRIVATE)
         val gson = Gson()
         val jsonstring: String? = sharedPreferences.getString("School Survey List",null)
-        val type = object : TypeToken<ArrayList<PendingClass?>?>() {}.type
+        val type = object : TypeToken<PendingClass?>() {}.type
 
 
-        pendingClass = gson.fromJson(jsonstring,type)
+        //pendingClass = gson.fromJson(jsonstring,type)
+        var pc  = PendingClass()
+        pc = gson.fromJson(jsonstring,type)
+        Log.d("Log", "loadData: ${pc.schoolId} ${pc.records.officerId}")
 
-        if(pendingClass == null)
+        if(pc == null)
         {
             Toast.makeText(requireContext(), "Pending class is null", Toast.LENGTH_SHORT).show()
         }
 
+        return pc
 
 
 
