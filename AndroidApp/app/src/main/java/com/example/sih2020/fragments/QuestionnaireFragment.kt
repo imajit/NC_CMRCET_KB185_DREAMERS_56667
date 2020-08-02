@@ -2,7 +2,6 @@ package com.example.sih2020.fragments
 
 
 import android.content.Context.MODE_PRIVATE
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -25,7 +24,6 @@ import com.example.sih2020.utils.onQuestionclicked
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import java.lang.reflect.Type
 
 
 class QuestionnaireFragment : BaseFragment(), onQuestionclicked {
@@ -38,6 +36,10 @@ class QuestionnaireFragment : BaseFragment(), onQuestionclicked {
     private  var card: CardView?=null
     var navController: NavController? = null
     var pendingClass: PendingClass? = null
+
+    /**TODO
+     * add a class which contains both records and school id
+     */
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -146,7 +148,20 @@ class QuestionnaireFragment : BaseFragment(), onQuestionclicked {
         val sharedPreferences = requireContext().getSharedPreferences("SP_INFO", MODE_PRIVATE)
         var gson = Gson()
         var jsonstring: String? = sharedPreferences.getString("School Survey List",null)
-      
+        val type = object : TypeToken<ArrayList<Records?>?>() {}.type
+
+        /**
+         * Uncomment the below code with correct class name in the left hand side
+         */
+//        pendingClass = gson.fromJson(jsonstring,type)
+
+        if(pendingClass == null)
+        {
+            /**TODO
+             * Implement this part logic
+             */
+        }
+
 
 
 
