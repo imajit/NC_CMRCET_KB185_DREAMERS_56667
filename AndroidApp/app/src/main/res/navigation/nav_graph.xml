@@ -69,7 +69,7 @@
     <fragment
         android:id="@+id/MCQAnswerFragment"
         android:name="com.example.sih2020.fragments.MCQAnswerFragment"
-        android:label="fragment_m_c_q_answer"
+        android:label="Answer"
         tools:layout="@layout/fragment_m_c_q_answer" />
     <fragment
         android:id="@+id/feedBack"

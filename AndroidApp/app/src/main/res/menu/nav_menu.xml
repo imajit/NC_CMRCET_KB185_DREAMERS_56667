@@ -8,7 +8,7 @@
         <item
             android:id="@+id/nav_faq"
             android:icon="@drawable/faq"
-            android:iconTint="@color/colorPrimaryDark"
+            app:iconTint="#000000"
             android:title="FAQs" />
 
         <item
