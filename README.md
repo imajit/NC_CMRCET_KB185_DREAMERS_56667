@@ -1,4 +1,4 @@
-# KB185_DREAMERS_56667
-Smart India Hackacthon Solution
+# NC_CMRCET_KB185_DREAMERS_56667
+Smart India Hackacthon Problem Statement
 
-### Check the commit history of the dev branch as we are using that for development purpose.Will push the code to master when all development task is done.
+### Please check the Commit status of the Dev branch as all the development is taking olace here.Once all the major functionalities are done we will push the code to the master branch .

@@ -20,7 +20,10 @@
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
             android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme" />
+            android:theme="@style/WhiteLayout"
+            app:popupTheme="@style/WhiteLayout"
+            app:itemIconTint="@color/white"
+            app:titleTextColor="@color/white" />
 
         <fragment
             android:id="@+id/fragment"
@@ -37,5 +40,8 @@
         android:layout_height="match_parent"
         app:menu="@menu/nav_menu"
         android:id="@+id/navigation_view"
-        android:layout_gravity="start"/>
+        android:layout_gravity="start"
+        app:theme="@style/WhiteLayout"
+        app:headerLayout="@layout/nav_header"
+        app:itemIconTint="@color/Button"/>
 </androidx.drawerlayout.widget.DrawerLayout>

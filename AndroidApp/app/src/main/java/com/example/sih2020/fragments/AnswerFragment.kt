@@ -10,8 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.example.sih2020.R
 import com.example.sih2020.classes.Questionnaire
 import com.example.sih2020.dbClasses.model.QuestionDatabase
@@ -33,7 +32,6 @@ class AnswerFragment : BaseFragment(){
     lateinit var inputEditText: TextInputEditText
     lateinit var floatingActionButton: FloatingActionButton
     lateinit var questiontext : MaterialTextView
-    var navController: NavController? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,11 +50,11 @@ class AnswerFragment : BaseFragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        navController = Navigation.findNavController(view)
+
         inputEditText = view.findViewById(R.id.edittext_answer)
         floatingActionButton = view.findViewById(R.id.FloatingButton)
         questiontext = view.findViewById(R.id.textViewQuestionDetail)
-        questiontext.text = "Question: " + Questionnaire.questionnaireQuestions[requireArguments().getInt("QuestionNumber")] + "\nCategory : " +  Questionnaire.questionnaireCategory[requireArguments().getInt("QuestionNumber")]
+        questiontext.text = "Question ${requireArguments().getInt("QuestionNumber")}: " + Questionnaire.questionnaireQuestions[requireArguments().getInt("QuestionNumber")] + "\nCategory : " +  Questionnaire.questionnaireCategory[requireArguments().getInt("QuestionNumber")]
 
 
         inputEditText.addTextChangedListener( object : TextWatcher
@@ -79,16 +77,15 @@ class AnswerFragment : BaseFragment(){
                         val questionEntity = QuestionEntity(questiontext.toString(),inputEditText.toString())
                         context?.let {
                             var qObj = qa()
-                            qObj.analysis = "0"
-                            qObj.answer = inputEditText.toString()
+                            qObj.analysis = 0.0
+                            qObj.answer = inputEditText.text.toString()
                             qObj.question = Questionnaire.questionnaireQuestions[requireArguments().getInt("QuestionNumber")]
                             qObj.category = Questionnaire.questionnaireCategory[requireArguments().getInt("QuestionNumber")]
                             Constants.qList.add(qObj)
                             Constants.questionsCount++
                             QuestionDatabase(it).getquestionDao().addanswer(questionEntity)
                             Toast.makeText(it, "Saved", Toast.LENGTH_SHORT).show()
-                            navController!!.navigate(R.id.AnswerToQuestionnaire)
-
+                            findNavController().popBackStack()
                         }
                     }
 

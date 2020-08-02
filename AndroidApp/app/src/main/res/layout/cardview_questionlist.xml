@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardviewQuestion"
     android:layout_width="match_parent"
@@ -11,7 +12,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/NonAnswerdCardColor"
+        android:background="#ffffff"
         android:orientation="vertical">
 
         <LinearLayout
@@ -34,9 +35,10 @@
                 android:textStyle="bold"/>
 
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:weightSum="10"
                 android:orientation="horizontal">
 
                 <com.google.android.material.textview.MaterialTextView
@@ -44,6 +46,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="bottom"
+                    android:layout_weight="9"
                     android:textColor="#fff"
                     android:text="Question"
                     android:textSize="18sp" />
@@ -52,10 +55,11 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:layout_alignParentRight="true"
                     android:src="@drawable/nav" />
 
-            </RelativeLayout>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
