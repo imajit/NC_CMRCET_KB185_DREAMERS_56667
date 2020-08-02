@@ -10,8 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import com.example.sih2020.R
 import com.example.sih2020.classes.Questionnaire
 import com.example.sih2020.dbClasses.model.QuestionDatabase
@@ -33,7 +31,6 @@ class AnswerFragment : BaseFragment(){
     lateinit var inputEditText: TextInputEditText
     lateinit var floatingActionButton: FloatingActionButton
     lateinit var questiontext : MaterialTextView
-    var navController: NavController? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,7 +49,7 @@ class AnswerFragment : BaseFragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        navController = Navigation.findNavController(view)
+
         inputEditText = view.findViewById(R.id.edittext_answer)
         floatingActionButton = view.findViewById(R.id.FloatingButton)
         questiontext = view.findViewById(R.id.textViewQuestionDetail)
@@ -87,8 +84,6 @@ class AnswerFragment : BaseFragment(){
                             Constants.questionsCount++
                             QuestionDatabase(it).getquestionDao().addanswer(questionEntity)
                             Toast.makeText(it, "Saved", Toast.LENGTH_SHORT).show()
-                            navController!!.navigate(R.id.AnswerToQuestionnaire)
-
                         }
                     }
 

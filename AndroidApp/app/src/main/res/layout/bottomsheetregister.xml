@@ -10,8 +10,7 @@
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehaviour">
 
 
-    <com.google.android.material.card.MaterialCardView
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/CardviewRegister"
         android:layout_width="match_parent"
@@ -39,6 +38,9 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:outlineSpotShadowColor="@color/colorPrimary"
+                android:theme="@style/BlueCheck"
+                app:boxStrokeColor="@color/colorPrimary"
                 android:hint="Name">
 
 
@@ -46,7 +48,8 @@
                     android:id="@+id/edittext_userName"
 
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:theme="@style/CursorColor"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -59,14 +62,18 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Phone Number">
+                android:hint="Phone Number"
+                android:outlineSpotShadowColor="@color/colorPrimary"
+                android:theme="@style/BlueCheck"
+                app:boxStrokeColor="@color/colorPrimary">
 
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edittext_phoneNumber"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:inputType="phone" />
+                    android:inputType="phone"
+                    android:theme="@style/CursorColor"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -81,8 +88,8 @@
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/face"
                 android:paddingTop="10dp"
-                app:backgroundTint="@color/ButtonColour"
                 android:text="Add Face Image"
+                android:backgroundTint="@color/colorPrimary"
                 android:visibility="visible" />
 
             <LinearLayout
@@ -97,7 +104,7 @@
                 android:drawableEnd="@drawable/register"
                 android:paddingTop="10dp"
                 android:text="Register"
-                app:backgroundTint="@color/ButtonColour"
+                android:backgroundTint="@color/colorPrimary"
                 android:visibility="visible" />
 
 

@@ -60,9 +60,9 @@ class QuestionnaireAdapter(private val listner: onQuestionclicked):RecyclerView.
 
     private fun setColor(holder: QuestionnaireAdapter.ViewHolder) {
         if(holder.adapterPosition < Constants.qList.size){
-            holder.itemView.cardviewQuestion.findViewById<LinearLayout>(R.id.questionCard).setBackgroundColor(Color.parseColor("#80010FFF"))
+            holder.itemView.cardviewQuestion.findViewById<LinearLayout>(R.id.questionCard).setBackgroundColor(Color.parseColor("#B0010FFF"))
         }else{
-            holder.itemView.cardviewQuestion.findViewById<LinearLayout>(R.id.questionCard).setBackgroundColor(Color.parseColor("#90caf9"))
+            holder.itemView.cardviewQuestion.findViewById<LinearLayout>(R.id.questionCard).setBackgroundColor(Color.parseColor("#80010FFF"))
         }
     }
 
