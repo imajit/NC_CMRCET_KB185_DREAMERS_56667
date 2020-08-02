@@ -1,5 +1,22 @@
 <div *ngIf="this.dataReceived.length!==1">
-  
+  <div class="mt-12 mb-3" style="width: 25%;">
+    <mat-form-field appearance="fill">
+      <mat-label>Category Wise Rank</mat-label>
+      <mat-select [(value)]="selected" (valueChange)="valueChanged()">
+        <!-- <mat-option value="overall">Overall Score</mat-option> -->
+        <mat-option value="none">None</mat-option>
+        <mat-option value="Infrastructure">Infrastructure</mat-option>
+        <mat-option value="Academic Excellence">Academic Excellence</mat-option>
+        <mat-option value="Extra Curricular activities">Extra Curricular Activities</mat-option>
+        <mat-option value="Individual attention">Individual Attention</mat-option>
+        <mat-option value="Life Skills education">Life Skills Education</mat-option>
+        <mat-option value="Percentage of female students and faculty">Percentage of female students and faculty</mat-option>
+        <mat-option value="Facilities for differently abled persons">Facilities for differently abled persons</mat-option>
+        <mat-option value="Values Education">Values Education</mat-option>
+        <mat-option value="Hygiene">Hygiene</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
   <div class="row">
     <div class="col-md-6">
       <mat-form-field>
@@ -23,7 +40,7 @@
     
         <!-- Progress Column -->
         <ng-container matColumnDef="school_score">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> School Score </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> {{scoreColumnName}} </th>
           <td mat-cell *matCellDef="let row"> {{row.school_score}} </td>
         </ng-container>
 

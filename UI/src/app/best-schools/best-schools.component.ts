@@ -20,6 +20,8 @@ export interface TableData{
   styleUrls: ['./best-schools.component.css']
 })
 export class BestSchoolsComponent implements OnInit {
+  selected:string="none";
+  scoreColumnName:string="School Score"
   displayedColumns: string[] = ['id','school_name', 'school_id','school_score','creation_date','district'];
   dataSource: MatTableDataSource<TableData>;
   serverData:DbModel[];
@@ -77,6 +79,17 @@ export class BestSchoolsComponent implements OnInit {
       }
     })
   }
+  valueChanged(){
+    if(this.selected==='none'){
+      var newTableData:TableData[] = this.createTable();
+      this.dataSource = new MatTableDataSource(newTableData);
+    }
+    else{
+      this.scoreColumnName=this.selected + ' Score';
+      var newTableData:TableData[] = this.fillTableDataWithFilter(this.selected);
+      this.dataSource = new MatTableDataSource(newTableData);
+    }
+  }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -112,5 +125,40 @@ export class BestSchoolsComponent implements OnInit {
     })
 
     return createdTableData;
+  }
+
+  fillTableDataWithFilter(category:string){
+    var createdTableData:TableData[]=[];
+    this.dataReceived.forEach(data => {
+      var schoolName = data.SchoolName
+      var school_score = 0
+      var creationDate
+      var id = data.SchoolID;
+      var schoolDistrict = data.SchoolDistrict;
+      data.Records.forEach( res => {
+        var quesOverallScore=0;
+        var occur:number=0;
+        res.questions.forEach(ques =>{
+          if(ques.category==category){
+          quesOverallScore = quesOverallScore + ques.analysis;
+          occur = occur +1;
+          }
+        })
+        school_score = school_score + quesOverallScore/(occur);
+        creationDate= new Date(res.creationDate)
+      })
+      school_score=+((school_score/(data.Records.length)).toFixed(2));
+      createdTableData.push({creation_date:creationDate,school_name:schoolName,school_score:school_score,school_id:id,district:schoolDistrict})
+    })
+
+    createdTableData.sort((a:TableData,b:TableData)=>{
+      return (+b.school_score - (+a.school_score));
+    })
+
+    console.log("Filter added on best school");
+    
+    return createdTableData;
+
+
   }
 }
