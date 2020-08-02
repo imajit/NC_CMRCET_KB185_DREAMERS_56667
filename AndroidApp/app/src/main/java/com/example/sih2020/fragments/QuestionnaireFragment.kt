@@ -91,6 +91,8 @@ class QuestionnaireFragment : BaseFragment(), onQuestionclicked {
         Constants.mapList.add(mapOf(Pair(Constants.schoolId,record)))
         sentimentOnList(record.questions,Constants.schoolId,record,Constants.photo,requireContext())
 
+        pendingClass?.records = record
+        pendingClass?.schoolId = Constants.schoolId
 
         /**TODO
          * Call the function saveData( schoolId:String, records: Records) to save the results in gson format
@@ -101,22 +103,6 @@ class QuestionnaireFragment : BaseFragment(), onQuestionclicked {
 
 
 
-        /*launch {
-            context?.let {
-                if(PendingSurveyDatabase(it).getPendingSurveyDao().getAllList().isEmpty())
-                {
-                    val list = PendingSurveyEntity(Constants.schoolId,record)
-                    PendingSurveyDatabase(it).getPendingSurveyDao().addList(list)
-                    Toast.makeText(requireContext(), "saved to room", Toast.LENGTH_SHORT).show()
-                }
-                else{
-                    *//**TODO
-         * Update the else part as required to append or update any existing record
-         *//*
-                }
-
-            }
-        }*/
 
 
 
@@ -141,7 +127,7 @@ class QuestionnaireFragment : BaseFragment(), onQuestionclicked {
 
             R.id.submitButton-> {
                 if(Constants.questionsCount == Constants.qList.size){
-
+                    Toast.makeText(requireContext(), "Submit all list", Toast.LENGTH_SHORT).show()
                 }else{
                     Toast.makeText(requireContext(),"Submit All Questions", Toast.LENGTH_SHORT).show()
                 }
@@ -153,13 +139,13 @@ class QuestionnaireFragment : BaseFragment(), onQuestionclicked {
         }
 
     }
-    private fun saveData( schoolId:String, records: Records)
+    private fun saveData( pending: PendingClass)
     {
         val sharedPreferences = requireContext().getSharedPreferences("SP_INFO", MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         var gson = Gson()
         //please update the class file with all the variable required in json format
-        var jsonString = gson.toJson(records)
+        var jsonString = gson.toJson(pending)
         editor.putString("School Survey List", jsonString)
         editor.apply()
 
@@ -169,20 +155,16 @@ class QuestionnaireFragment : BaseFragment(), onQuestionclicked {
     {
 
         val sharedPreferences = requireContext().getSharedPreferences("SP_INFO", MODE_PRIVATE)
-        var gson = Gson()
-        var jsonstring: String? = sharedPreferences.getString("School Survey List",null)
-        val type = object : TypeToken<ArrayList<Records?>?>() {}.type
+        val gson = Gson()
+        val jsonstring: String? = sharedPreferences.getString("School Survey List",null)
+        val type = object : TypeToken<ArrayList<PendingClass?>?>() {}.type
 
-        /**
-         * Uncomment the below code with correct class name in the left hand side
-         */
-//        pendingClass = gson.fromJson(jsonstring,type)
+
+        pendingClass = gson.fromJson(jsonstring,type)
 
         if(pendingClass == null)
         {
-            /**TODO
-             * Implement this part logic
-             */
+            Toast.makeText(requireContext(), "Pending class is null", Toast.LENGTH_SHORT).show()
         }
 
 
