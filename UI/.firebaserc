@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "monitoringapp-922d6": {
+      "hosting": {
+        "UI": [
+          "monitoringapp-922d6"
+        ]
+      }
+    }
+  }
+}

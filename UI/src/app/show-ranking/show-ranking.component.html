@@ -1,0 +1,12 @@
+<div *ngIf="dataReceived.length===1">
+    <div class="chartjs-container" style="height: 400px;">
+        <canvas baseChart 
+            [datasets]="barChartData" 
+            [labels]="barChartLabels" 
+            [options]="barChartOptions"
+            [plugins]="barChartPlugins" 
+            [legend]="barChartLegend" 
+            [chartType]="barChartType">
+        </canvas>
+    </div>
+</div>

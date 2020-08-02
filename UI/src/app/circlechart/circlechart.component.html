@@ -1,0 +1,13 @@
+<div class="d-flex justify-content-center">
+<rg-gauge-chart
+    [canvasWidth]="canvasWidth"
+    [needleValue]="needleValue"
+    [centralLabel]="centralLabel"
+    [options]="options"
+    [name]="name"
+    [bottomLabel]="bottomLabel"></rg-gauge-chart>
+    </div>
+
+<div class="text-center ml-3 mt-3" *ngIf="dataReceived.length===1">
+    <button mat-raised-button color="primary" (click)="openDialog()">Show Detailed Score</button>
+</div>

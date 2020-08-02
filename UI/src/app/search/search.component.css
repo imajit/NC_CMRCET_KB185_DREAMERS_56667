@@ -1,0 +1,10 @@
+.example-form {
+    min-width: 500px;
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
