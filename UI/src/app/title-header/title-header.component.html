@@ -1,0 +1,21 @@
+<div class="row" *ngIf="this.dataReceived.length===1">
+    <div class="col-md-4">
+        <h3 class="text-center">
+            <img alt="Logo" src="https://st2.depositphotos.com/1588812/11108/v/950/depositphotos_111080206-stock-illustration-vector-logo-school.jpg" width="150" height="70">
+        </h3>
+    </div>
+    <div class="col-md-4">
+        <h2 class="customWrap"><b>School Name</b> : {{SchoolName}}</h2><hr/>
+        <h3 class="customWrap"><b>School ID</b> : {{SchoolID}}</h3><hr/>
+        <h3 class="customWrap"><b>Address</b> : {{SchoolAddress}}</h3><hr/>
+        <h3 class="customWrap"><b>Most Recent Review</b> : {{OverallReview}} </h3>
+    </div>
+    <div class="ml-1 col-md-3">
+        <h3 class="text-center">
+            <img alt="School" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Larkmead_School%2C_Abingdon%2C_Oxfordshire.png/240px-Larkmead_School%2C_Abingdon%2C_Oxfordshire.png" width="150" height="70">
+        </h3>
+    </div>
+    <div>
+        <a [routerLink]="['/download']">Download Data</a>
+    </div>
+</div>
