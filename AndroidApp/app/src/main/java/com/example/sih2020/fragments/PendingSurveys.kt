@@ -15,7 +15,9 @@ import com.example.sih2020.R
 import com.example.sih2020.adapters.PendingSurveyApater
 import com.example.sih2020.adapters.QuestionnaireAdapter
 import com.example.sih2020.utils.BaseFragment
+import com.example.sih2020.utils.Constants
 import com.example.sih2020.utils.RecyclerViewClickListner
+import com.example.sih2020.utils.sentimentOnList
 import kotlinx.android.synthetic.main.fragment_pending_surveys.*
 import java.text.FieldPosition
 
@@ -57,7 +59,7 @@ class PendingSurveys : BaseFragment(), RecyclerViewClickListner {
     }
 
     private fun getRecordsAndUpload() {
-        TODO("Not yet implemented")
+        sentimentOnList(Constants.pendingSurveys.records.questions,Constants.pendingSurveys.schoolId,Constants.pendingSurveys.records,Constants.photo,requireContext())
     }
 
 

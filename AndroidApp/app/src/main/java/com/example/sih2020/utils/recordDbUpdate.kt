@@ -1,7 +1,9 @@
 package com.example.sih2020.utils
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
+import android.content.SharedPreferences
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.Log
@@ -41,7 +43,9 @@ fun updateRecordToDb(schoolIndex: String, record: Records,context: Context){
             Log.d("Task 123", "onDataChange: ${snapshot.childrenCount}")
             recRef.child(snapshot.childrenCount.toString()).setValue(record)
             dialog.dismiss()
-
+            Toast.makeText(context,"Uploaded",Toast.LENGTH_LONG).show()
+            (context as Activity).onBackPressed()
+            clearData(context)
         }
     }
     recRef.addListenerForSingleValueEvent(listener)
