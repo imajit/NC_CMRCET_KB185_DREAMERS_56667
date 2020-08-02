@@ -19,6 +19,9 @@
         <action
             android:id="@+id/Test"
             app:destination="@id/questionnaireCategoryFragment" />
+        <action
+            android:id="@+id/HomeToMCQ"
+            app:destination="@id/MCQAnswerFragment" />
     </fragment>
     <fragment
         android:id="@+id/questionnaireFragment"
@@ -29,11 +32,6 @@
             android:id="@+id/QuestionListToAnswer"
             app:destination="@id/answerFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.sih2020.fragments.LoginFragment"
-        android:label="Login"
-        tools:layout="@layout/fragment_login" />
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.sih2020.fragments.RegisterFragment"
@@ -62,4 +60,9 @@
             android:id="@+id/CategoryToQuestions"
             app:destination="@id/questionnaireFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/MCQAnswerFragment"
+        android:name="com.example.sih2020.fragments.MCQAnswerFragment"
+        android:label="fragment_m_c_q_answer"
+        tools:layout="@layout/fragment_m_c_q_answer" />
 </navigation>

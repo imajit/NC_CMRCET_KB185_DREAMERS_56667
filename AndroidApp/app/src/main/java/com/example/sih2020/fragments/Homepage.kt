@@ -120,7 +120,7 @@ class Homepage : Fragment(), View.OnClickListener {
 
             R.id.seePreviousSurvey->navController!!.navigate(R.id.homeToQuestionList)
 
-        R.id.textGrid->navController!!.navigate(R.id.Test)
+        R.id.textGrid->navController!!.navigate(R.id.HomeToMCQ)
 
 
         }

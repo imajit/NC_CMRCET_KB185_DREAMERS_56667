@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.MCQAnswerFragment"
-    android:orientation="horizontal">
+    android:orientation="vertical">
 
 
 
@@ -120,7 +120,14 @@
 
 
 
-
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/FloatingButtonMCQ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:src="@drawable/done"/>
 
 
         </LinearLayout>
@@ -128,17 +135,7 @@
 
 
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/FloatingButtonMCQ"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_marginEnd="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_margin="10dp"
-            android:enabled="false"
-            android:backgroundTint="@color/colorPrimary"
-            android:src="@drawable/done"/>
+
 
 
     </LinearLayout>
