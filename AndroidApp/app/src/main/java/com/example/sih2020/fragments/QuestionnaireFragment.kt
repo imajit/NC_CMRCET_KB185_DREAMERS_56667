@@ -132,10 +132,7 @@ class QuestionnaireFragment : BaseFragment(), onQuestionclicked {
                     Toast.makeText(requireContext(),"Submit All Questions", Toast.LENGTH_SHORT).show()
                 }
             }
-//                {
-//                   val action= QuestionnaireFragmentDirections.QuestionListToAnswer(question)
-//                    view.findNavController().navigate(action)
-//                }
+
         }
 
     }

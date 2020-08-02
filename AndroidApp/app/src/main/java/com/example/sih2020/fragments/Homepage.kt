@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.sih2020.R
@@ -41,6 +42,7 @@ class Homepage : Fragment(), View.OnClickListener {
         view.findViewById<MaterialCardView>(R.id.cardview_oldsurvey).setOnClickListener(this)
         view.findViewById<MaterialCardView>(R.id.seePreviousSurvey).setOnClickListener(this)
         view.findViewById<MaterialCardView>(R.id.RegisterUser).setOnClickListener(this)
+        view.findViewById<TextView>(R.id.textGrid).setOnClickListener(this)
 
 
         /***
@@ -84,7 +86,7 @@ class Homepage : Fragment(), View.OnClickListener {
 
             R.id.seePreviousSurvey->navController!!.navigate(R.id.homeToQuestionList)
 
-
+        R.id.textGrid->navController!!.navigate(R.id.Test)
 
 
         }

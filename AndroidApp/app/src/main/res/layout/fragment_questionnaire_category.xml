@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,8 +7,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.QuestionnaireCategoryFragment">
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
     <com.google.android.material.card.MaterialCardView
 
+        android:id="@+id/MaterialCardViewQuestionCategoryInfra"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardBackgroundColor="@color/Button"
@@ -69,6 +76,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/MaterialCardViewQuestionCategoryAcademic"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -112,7 +120,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="bottom"
                         android:textColor="#fff"
-                        android:text="Skills"
+                        android:text="Academic Excellence"
                         android:textSize="18sp" />
 
 
@@ -130,6 +138,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/MaterialCardViewQuestionCategoryExtraCurricular"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -173,7 +182,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="bottom"
                         android:textColor="#fff"
-                        android:text="Infrastructure"
+                        android:text="Extra Curricular activities"
                         android:textSize="18sp" />
 
 
@@ -191,6 +200,8 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
+
+        android:id="@+id/MaterialCardViewQuestionCategoryIndividualAttention"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -218,7 +229,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textColor="#101010"
-                    android:text="Category 2 "
+                    android:text="Category 4 "
                     android:textSize="14sp"
                     android:textStyle="bold"/>
 
@@ -234,7 +245,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="bottom"
                         android:textColor="#fff"
-                        android:text="Skills"
+                        android:text="Individual attention"
                         android:textSize="18sp" />
 
 
@@ -252,6 +263,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/MaterialCardViewQuestionCategoryLifeSkills"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -279,7 +291,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textColor="#101010"
-                    android:text="Category 1 "
+                    android:text="Category 5 "
                     android:textSize="14sp"
                     android:textStyle="bold"/>
 
@@ -295,7 +307,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="bottom"
                         android:textColor="#fff"
-                        android:text="Infrastructure"
+                        android:text="Life Skills education"
                         android:textSize="18sp" />
 
 
@@ -313,6 +325,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/MaterialCardViewQuestionCategoryFemale"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -340,7 +353,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textColor="#101010"
-                    android:text="Category 2 "
+                    android:text="Category 6 "
                     android:textSize="14sp"
                     android:textStyle="bold"/>
 
@@ -356,7 +369,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="bottom"
                         android:textColor="#fff"
-                        android:text="Skills"
+                        android:text="Percentage of female students and faculty"
                         android:textSize="18sp" />
 
 
@@ -374,6 +387,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/MaterialCardViewQuestionCategoryDifferentlyAbled"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -401,7 +415,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textColor="#101010"
-                    android:text="Category 1 "
+                    android:text="Category 7 "
                     android:textSize="14sp"
                     android:textStyle="bold"/>
 
@@ -417,7 +431,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="bottom"
                         android:textColor="#fff"
-                        android:text="Infrastructure"
+                        android:text="Facilities for differently abled persons"
                         android:textSize="18sp" />
 
 
@@ -435,6 +449,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/MaterialCardViewQuestionCategoryValueEducation"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -462,7 +477,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textColor="#101010"
-                    android:text="Category 2 "
+                    android:text="Category 8 "
                     android:textSize="14sp"
                     android:textStyle="bold"/>
 
@@ -478,7 +493,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="bottom"
                         android:textColor="#fff"
-                        android:text="Skills"
+                        android:text="Values Education"
                         android:textSize="18sp" />
 
 
@@ -496,3 +511,4 @@
     </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>
+</ScrollView>
