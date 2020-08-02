@@ -21,6 +21,7 @@ import com.example.sih2020.dbClasses.Records
 import com.example.sih2020.utils.BaseFragment
 import com.example.sih2020.utils.Constants
 import com.example.sih2020.utils.onQuestionclicked
+import com.example.sih2020.utils.sentimentOnList
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -88,6 +89,8 @@ class QuestionnaireFragment : BaseFragment(), onQuestionclicked {
         record.overallReview = Constants.overallReview
         record.questions = Constants.qList
         Constants.mapList.add(mapOf(Pair(Constants.schoolId,record)))
+        sentimentOnList(record.questions,Constants.schoolId,record,Constants.photo,requireContext())
+
 
         /**TODO
          * Call the function saveData( schoolId:String, records: Records) to save the results in gson format
@@ -98,36 +101,56 @@ class QuestionnaireFragment : BaseFragment(), onQuestionclicked {
 
 
 
+        /*launch {
+            context?.let {
+                if(PendingSurveyDatabase(it).getPendingSurveyDao().getAllList().isEmpty())
+                {
+                    val list = PendingSurveyEntity(Constants.schoolId,record)
+                    PendingSurveyDatabase(it).getPendingSurveyDao().addList(list)
+                    Toast.makeText(requireContext(), "saved to room", Toast.LENGTH_SHORT).show()
+                }
+                else{
+                    *//**TODO
+         * Update the else part as required to append or update any existing record
+         *//*
+                }
+
+            }
+        }*/
+
+
+
+
 
 
 
     }
 
     override fun Onclicked(question: String, view: View,position: Int) {
-            when(view.id)
-            {
-               R.id.cardviewQuestion-> {
-                   val bundle = bundleOf("QuestionNumber" to position)
-                   if(Constants.questionsCount == position){
-                   navController!!.navigate(R.id.QuestionListToAnswer,bundle)
-                   //
-                   }else{
-                       Toast.makeText(requireContext(),"Submit Question ${Constants.questionsCount+1} first ",Toast.LENGTH_LONG).show()
-                   }
-               }
-
-                R.id.submitButton-> {
-                    if(Constants.questionsCount == Constants.qList.size){
-
-                    }else{
-                        Toast.makeText(requireContext(),"Submit All Questions", Toast.LENGTH_SHORT).show()
-                    }
+        when(view.id)
+        {
+            R.id.cardviewQuestion-> {
+                val bundle = bundleOf("QuestionNumber" to position)
+                if(Constants.questionsCount == position){
+                    navController!!.navigate(R.id.QuestionListToAnswer,bundle)
+                    //
+                }else{
+                    Toast.makeText(requireContext(),"Submit Question ${Constants.questionsCount+1} first ",Toast.LENGTH_LONG).show()
                 }
+            }
+
+            R.id.submitButton-> {
+                if(Constants.questionsCount == Constants.qList.size){
+
+                }else{
+                    Toast.makeText(requireContext(),"Submit All Questions", Toast.LENGTH_SHORT).show()
+                }
+            }
 //                {
 //                   val action= QuestionnaireFragmentDirections.QuestionListToAnswer(question)
 //                    view.findNavController().navigate(action)
 //                }
-            }
+        }
 
     }
     private fun saveData( schoolId:String, records: Records)
