@@ -119,9 +119,26 @@ class QuestionnaireFragment : BaseFragment(), onQuestionclicked {
         when(view.id)
         {
             R.id.cardviewQuestion-> {
-                val bundle = bundleOf("QuestionNumber" to position)
+
                 if(Constants.questionsCount == position){
-                    navController!!.navigate(R.id.QuestionListToAnswer,bundle)
+                    when(Questionnaire.questionnaireTag[position]){
+                        "subj"->{
+                            val bundle = bundleOf("QuestionNumber" to position,"tag" to "subj")
+                            navController!!.navigate(R.id.QuestionListToAnswer,bundle)
+                        }
+                        "yn"->{
+                            val bundle = bundleOf("QuestionNumber" to position,"tag" to "yn")
+                            navController!!.navigate(R.id.action_questionnaireFragment_to_MCQAnswerFragment,bundle)
+                        }
+                        "week"->{
+                            val bundle = bundleOf("QuestionNumber" to position,"tag" to "week")
+                            navController!!.navigate(R.id.action_questionnaireFragment_to_MCQAnswerFragment,bundle)
+                        }
+                        "per"->{
+                            val bundle = bundleOf("QuestionNumber" to position,"tag" to "per")
+                            navController!!.navigate(R.id.action_questionnaireFragment_to_MCQAnswerFragment,bundle)
+                        }
+                    }
                     //
                 }else{
                     Toast.makeText(requireContext(),"Submit Question ${Constants.questionsCount+1} first ",Toast.LENGTH_LONG).show()

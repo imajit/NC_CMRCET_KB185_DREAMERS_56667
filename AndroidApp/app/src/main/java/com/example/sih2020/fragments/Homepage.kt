@@ -56,33 +56,25 @@ class Homepage : Fragment(), View.OnClickListener {
 
         /***
          * TODO implement callBack from the bottomsheet to get the parameters and authenticate the user to the next screen
-          ***/
-
-
-
-
-
+         ***/
 
 
     }
 
 
-
-
     override fun onClick(v: View?) {
 
-        when(v!!.id)
-        {
-            R.id.cardview_newSurvey->apply {
-               fragmentManager?.let {
-                   BottomSheetDialog().show(
-                       it,
-                       ""
-                   )
-               }
+        when (v!!.id) {
+            R.id.cardview_newSurvey -> apply {
+                fragmentManager?.let {
+                    BottomSheetDialog().show(
+                        it,
+                        ""
+                    )
+                }
             }
 
-            R.id.RegisterUser->apply {
+            R.id.RegisterUser -> apply {
                 fragmentManager?.let {
                     BottomSheetRegister().show(
                         it,
@@ -91,7 +83,7 @@ class Homepage : Fragment(), View.OnClickListener {
                 }
             }
 
-            R.id.cardview_oldsurvey-> {
+            R.id.cardview_oldsurvey -> {
                 val builder: AlertDialog.Builder = AlertDialog.Builder(context)
                 builder.setCancelable(false)
                 builder.setView(R.layout.progress_dialog)
@@ -99,28 +91,33 @@ class Homepage : Fragment(), View.OnClickListener {
                 dialog.setTitle("Loading . . .")
                 dialog.show()
                 Constants.pendingSurveys = loadData(requireContext())
-                object : CountDownTimer(500, 1000) {
-                    override fun onTick(millisUntilFinished: Long) {
+                if (Constants.pendingSurveys.schoolId == "-1") {
+                    dialog.dismiss()
+                    Toast.makeText(context, "No Surveys Found", Toast.LENGTH_LONG).show()
+                } else {
+                    object : CountDownTimer(500, 1000) {
+                        override fun onTick(millisUntilFinished: Long) {
 
-                    }
-
-                    override fun onFinish() {
-                        dialog.dismiss()
-                        if(Constants.pendingSurveys.schoolId.isEmpty()){
-                            Toast.makeText(context,"No Surveys Found",Toast.LENGTH_LONG).show()
-                        }else {
-                            navController!!.navigate(R.id.HomeToPendingSurvey)
                         }
-                    }
-                }.start()
 
+                        override fun onFinish() {
+                            dialog.dismiss()
+                            if (Constants.pendingSurveys.schoolId.isEmpty()) {
+                                Toast.makeText(context, "No Surveys Found", Toast.LENGTH_LONG)
+                                    .show()
+                            } else {
+                                navController!!.navigate(R.id.HomeToPendingSurvey)
+                            }
+                        }
+                    }.start()
+                }
 
 
             }
 
-            R.id.seePreviousSurvey->navController!!.navigate(R.id.homeToQuestionList)
+            R.id.seePreviousSurvey -> navController!!.navigate(R.id.homeToQuestionList)
 
-        R.id.textGrid->navController!!.navigate(R.id.HomeToMCQ)
+            R.id.textGrid -> navController!!.navigate(R.id.HomeToMCQ)
 
 
         }

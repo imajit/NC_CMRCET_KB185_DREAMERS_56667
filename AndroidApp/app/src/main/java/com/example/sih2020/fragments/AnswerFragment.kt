@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
+import androidx.navigation.fragment.findNavController
 import com.example.sih2020.R
 import com.example.sih2020.classes.Questionnaire
 import com.example.sih2020.dbClasses.model.QuestionDatabase
@@ -53,7 +54,7 @@ class AnswerFragment : BaseFragment(){
         inputEditText = view.findViewById(R.id.edittext_answer)
         floatingActionButton = view.findViewById(R.id.FloatingButton)
         questiontext = view.findViewById(R.id.textViewQuestionDetail)
-        questiontext.text = "Question: " + Questionnaire.questionnaireQuestions[requireArguments().getInt("QuestionNumber")] + "\nCategory : " +  Questionnaire.questionnaireCategory[requireArguments().getInt("QuestionNumber")]
+        questiontext.text = "Question ${requireArguments().getInt("QuestionNumber")}: " + Questionnaire.questionnaireQuestions[requireArguments().getInt("QuestionNumber")] + "\nCategory : " +  Questionnaire.questionnaireCategory[requireArguments().getInt("QuestionNumber")]
 
 
         inputEditText.addTextChangedListener( object : TextWatcher
@@ -84,6 +85,7 @@ class AnswerFragment : BaseFragment(){
                             Constants.questionsCount++
                             QuestionDatabase(it).getquestionDao().addanswer(questionEntity)
                             Toast.makeText(it, "Saved", Toast.LENGTH_SHORT).show()
+                            findNavController().popBackStack()
                         }
                     }
 
