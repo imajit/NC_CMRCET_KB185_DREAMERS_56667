@@ -38,3 +38,22 @@ Design of GPS enabled online Academic monitoring system to track the classroom t
 
 # Dashboard
 
+## Build
+
+Run `npm install` to build the project.
+
+
+## Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Highlights of the Dashboard
+1) You can see the cumulative score of all schools.
+
+2) A Recent Reviews table is there which shows the results of recently conducted surveys.
+
+3) Best School table is also there, here you can view the ranking of all schools, either by total score or by each category or by district.
+
+4) Performance tracker for each school. We draw a dynamic line chart which tracks the performance of a school across all categories.
+
+5) A PDF Report can be generated for each survey and can be used to compare the performance across each academic year.
