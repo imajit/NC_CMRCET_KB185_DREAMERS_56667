@@ -36,5 +36,5 @@ Design of GPS enabled online Academic monitoring system to track the classroom t
 
 6.There is separate app for parents also where parents can give review to schools.
 
-##Dashboard
+#Dashboard
 
