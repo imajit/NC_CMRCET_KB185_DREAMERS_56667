@@ -1,10 +1,10 @@
 # NC_CMRCET_KB185_DREAMERS_56667
 Smart India Hackacthon Problem Statement
 
-## Problem Statement
+# Problem Statement
 Design of GPS enabled online Academic monitoring system to track the classroom transaction and to provide feedback and the review to the teachers to improve their pedagogical practices by the monitoring authorities.
 
-## Need for the project
+# Need for the project
 1.Currently there’s no central monitoring and feedback system for schools.
 
 2.The offline feedback system is very error prone and susceptible for dishonest and fraudulent reviews.
@@ -19,7 +19,7 @@ Design of GPS enabled online Academic monitoring system to track the classroom t
 
 7.This way the system can’t be cheated and we have solved the problem of the lack of a proper online feedback system.
 
-8.##Impact of the Project : A trustworthy online monitoring and feedback system, can be used to rank and evaluate the performance of the school.
+8.#Impact of the Project : A trustworthy online monitoring and feedback system, can be used to rank and evaluate the performance of the school.
 
 
 #How to use application?
