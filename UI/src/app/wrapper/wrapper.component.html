@@ -1,11 +1,20 @@
 <mat-toolbar color="primary">
-    <button mat-icon-button (click)="reloadTheSite()">
-        <mat-icon>home</mat-icon>
-    </button>
-    <span (click)="reloadTheSite()" style="float: left;">Dashboard</span>
-    <a style="margin-left: 50.5em; color: white;" [routerLink]="['/reviews']" >Other Reviews</a>
-    <a style="margin-left: 1.5em; color: white;" [routerLink]="['/appointment']">Book an Appointment</a>
+        <div class="d-flex justify-content-start">
+            <button mat-icon-button (click)="reloadTheSite()">
+                <mat-icon>home</mat-icon>
+            </button>
+            <span (click)="reloadTheSite()" >Dashboard</span>
+        </div>
+        <div class="d-flex justify-content-end">
+            <div>
+                <a style="color: white;" [routerLink]="['/reviews']" >Other Reviews</a>
+            </div>
+            <div>
+                <a style="color: white;" [routerLink]="['/appointment']">Book an Appointment</a>
+            </div>
+        </div>
 </mat-toolbar>
+
 <div>
     <div class="ml-3 mr-3 mb-3 mt-3">
        
