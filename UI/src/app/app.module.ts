@@ -35,11 +35,13 @@ import { FullDetailedTableComponent } from './full-detailed-table/full-detailed-
 import { PDFExportModule } from '@progress/kendo-angular-pdf-export';
 import {DatePipe} from '@angular/common';
 import { AppointmentComponent } from './appointment/appointment.component';
+import { OtherReviewsComponent } from './other-reviews/other-reviews.component';
 
 const routes:Routes =[
   {path:'',component:WrapperComponent,pathMatch:'full'},
   {path:'download', component:PdfMakerComponent},
-  {path:'appointment',component:AppointmentComponent}
+  {path:'appointment',component:AppointmentComponent},
+  {path:'reviews',component:OtherReviewsComponent}
 ]
 
 @NgModule({
@@ -64,6 +66,7 @@ const routes:Routes =[
     WrapperComponent,
     FullDetailedTableComponent,
     AppointmentComponent,
+    OtherReviewsComponent,
   ],
   imports: [
     GaugeChartModule,

@@ -16,12 +16,19 @@ export class FetchDataService {
   private clearFilteredData:BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   watchclearFilteredData = this.clearFilteredData.asObservable();
 
+  private parentReviews:BehaviorSubject<any> = new BehaviorSubject<any>(null);
+  watchParentRevies = this.parentReviews.asObservable();
+
   changeServerData(val:any){
     console.log("ServerData has been changed and new value is ");
     console.log(val);
     
     
     this.serverData.next(val)
+  }
+
+  changeParentReviewData(val:any){
+    this.parentReviews.next(val);
   }
 
   changeFilteredDate(val:any){

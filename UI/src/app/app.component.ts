@@ -26,6 +26,10 @@ export class AppComponent {
       
       this.fetchData.changeServerData(this.items);
   })
+  db.list('/Parent').valueChanges().subscribe(res=>{
+    var data = res;
+    this.fetchData.changeParentReviewData(data);
+  })
   }
   // serverData:any=null
   // async ngOnInit(){
