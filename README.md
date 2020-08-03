@@ -6,6 +6,7 @@ Design of GPS enabled online Academic monitoring system to track the classroom t
 
 ## Need for the project
 1.Currently there’s no central monitoring and feedback system for schools.
+
 2.The offline feedback system is very error prone and susceptible for dishonest and fraudulent reviews.
 3.To counter that we are proposing an Online centralized feedback system, which solves all the shortcomings of the offline system.  
 4.We have designed and made both an Android App and an iOS App to conduct out the surveys.
