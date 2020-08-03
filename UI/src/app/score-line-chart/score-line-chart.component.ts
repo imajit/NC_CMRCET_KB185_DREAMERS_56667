@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component , OnInit,ViewChild, ElementRef } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database'
 import { ChartDataSets, ChartOptions, plugins } from 'chart.js';
@@ -97,7 +98,7 @@ export class ScoreLineChartComponent implements OnInit {
   SchoolID = "-1"
   SchoolAddress = "address of school"
   OverallReview = "overall review"
-  constructor(private fetchData:FetchDataService) { }
+  constructor(private fetchData:FetchDataService,private datepipe:DatePipe) { }
 
   ngOnInit(): void {
     this.fetchData.watchServerData.subscribe(res=>{
@@ -233,7 +234,7 @@ export class ScoreLineChartComponent implements OnInit {
         score=+((score/(res.questions.length)).toFixed(2));
         overallArray.push(score);
         var dd:Date = new Date(res.creationDate);
-        var dateString:string = dd.toLocaleDateString();
+        var dateString:string = this.datepipe.transform(dd,'MMM d, y');
         labelArray.push(dateString);
 
       })
