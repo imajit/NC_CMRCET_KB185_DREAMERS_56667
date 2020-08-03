@@ -66,7 +66,7 @@ export class ShowRankingComponent implements OnInit {
   barChartPlugins = [];
 
   barChartData: ChartDataSets[] = [
-    { data: [2500, 5900, 6000, 8100, 8600, 8050, 1200], label: 'Company A',barThickness:10},
+    { data: [2500, 5900, 6000, 8100, 8600, 8050, 1200], label: 'Company A',barThickness:10,backgroundColor:['red']},
   ];
 
   ngOnInit(): void {

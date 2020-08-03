@@ -14,6 +14,7 @@ export class WrapperComponent implements OnInit {
   }
 
   reloadTheSite(){
-    this.fetchData.changeClearFilteredData(true);
+    // this.fetchData.changeClearFilteredData(true);
+    window.location.reload();
   }
 }

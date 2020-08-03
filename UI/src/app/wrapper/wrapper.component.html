@@ -2,7 +2,9 @@
     <button mat-icon-button (click)="reloadTheSite()">
         <mat-icon>home</mat-icon>
     </button>
-    <span (click)="reloadTheSite()">Dashboard</span>
+    <span (click)="reloadTheSite()" style="float: left;">Dashboard</span>
+    <a style="margin-left: 50.5em; color: white;" [routerLink]="['/reviews']" >Other Reviews</a>
+    <a style="margin-left: 1.5em; color: white;" [routerLink]="['/appointment']">Book an Appointment</a>
 </mat-toolbar>
 <div>
     <div class="ml-3 mr-3 mb-3 mt-3">
