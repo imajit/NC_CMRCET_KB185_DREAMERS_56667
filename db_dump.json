@@ -1,0 +1,1267 @@
+{
+  "Parent" : [ {
+    "Records" : [ {
+      "creationDate" : "2020-09-13",
+      "gpslocation" : {
+        "lat" : 0,
+        "long" : 0
+      },
+      "officerID" : "12345",
+      "overallReview" : "very good",
+      "questions" : [ {
+        "analysis" : 9,
+        "answer" : "it was good",
+        "category" : "hygiene",
+        "question" : "how's was the hygeine"
+      }, {
+        "analysis" : 8,
+        "answer" : "the interaction was good and lively",
+        "category" : "interaction",
+        "question" : "how was student teacher interaction"
+      } ]
+    }, {
+      "creationDate" : "2020-10-13",
+      "gpslocation" : {
+        "lat" : 0,
+        "long" : 0
+      },
+      "officerID" : "123456",
+      "overallReview" : "below average performance",
+      "questions" : [ {
+        "analysis" : 4,
+        "answer" : "it was bad",
+        "category" : "hygiene",
+        "question" : "how was the hygiene ?"
+      }, {
+        "analysis" : 6,
+        "answer" : "it was above average",
+        "category" : "interaction",
+        "question" : "how was student teacher interaction"
+      } ]
+    }, {
+      "creationDate" : "2020-11-13",
+      "gpslocation" : {
+        "lat" : 0,
+        "long" : 0
+      },
+      "officerID" : "1234567",
+      "overallReview" : "very good",
+      "questions" : [ {
+        "analysis" : 10,
+        "answer" : "it was perfect",
+        "category" : "hygiene",
+        "question" : "how was the hygiene"
+      }, {
+        "analysis" : 8,
+        "answer" : "it was good",
+        "category" : "interaction",
+        "question" : "how was student teacher interaction"
+      } ]
+    }, {
+      "creationDate" : "2020-12-13",
+      "gpslocation" : {
+        "lat" : 0,
+        "long" : 0
+      },
+      "officerID" : "111",
+      "overallReview" : "it was very bad and I didn't like anything about the school, Particularly it's hygiene. the condition was so horrible that I almost puked. Next time they better improve it or i am going to revoke their funding",
+      "questions" : [ {
+        "analysis" : 1,
+        "answer" : "hygiene was worst",
+        "category" : "hygiene",
+        "question" : "how was the hygiene"
+      }, {
+        "analysis" : 4,
+        "answer" : "poor interaction",
+        "category" : "interaction",
+        "question" : "how was interaction"
+      } ]
+    }, {
+      "creationDate" : "2020-12-14",
+      "gpslocation" : {
+        "lat" : 0,
+        "long" : 0
+      },
+      "officerID" : "111",
+      "overallReview" : "it was bad",
+      "questions" : [ {
+        "analysis" : 1,
+        "answer" : "bad",
+        "category" : "hygiene",
+        "question" : "hygiene"
+      }, {
+        "analysis" : 2,
+        "answer" : "it was bad",
+        "category" : "interaction",
+        "question" : "interaction"
+      } ]
+    }, {
+      "creationDate" : "2020-12-15",
+      "gpslocation" : {
+        "lat" : 0,
+        "long" : 0
+      },
+      "officerID" : "1111",
+      "overallReview" : "it was average",
+      "questions" : [ {
+        "analysis" : 5,
+        "answer" : "below average",
+        "category" : "hygiene",
+        "question" : "hygiene?"
+      }, {
+        "analysis" : 7,
+        "answer" : "it was good",
+        "category" : "interaction",
+        "question" : "interaction?"
+      } ]
+    }, {
+      "creationDate" : "2020-12-16",
+      "gpslocation" : {
+        "lat" : 0,
+        "long" : 0
+      },
+      "officerID" : "1111",
+      "overallReview" : "it was very good. they have improved",
+      "questions" : [ {
+        "analysis" : 7,
+        "answer" : "it was good",
+        "category" : "hygiene",
+        "question" : "hygiene?"
+      }, {
+        "analysis" : 8,
+        "answer" : "it was excellent",
+        "category" : "interaction",
+        "question" : "interaction?"
+      } ]
+    }, {
+      "creationDate" : "2020-12-17",
+      "gpslocation" : {
+        "lat" : 0,
+        "long" : 0
+      },
+      "officerID" : "1111",
+      "overallReview" : "it was not that good",
+      "questions" : [ {
+        "analysis" : 8,
+        "answer" : "good",
+        "category" : "hygiene",
+        "question" : "hygiene?"
+      }, {
+        "analysis" : 5,
+        "answer" : "it was average",
+        "category" : "interaction",
+        "question" : "interaction?"
+      } ]
+    }, {
+      "creationDate" : "2020-12-18",
+      "gpslocation" : {
+        "lat" : 0,
+        "long" : 0
+      },
+      "officerID" : "1111",
+      "overallReview" : "it was excellent",
+      "questions" : [ {
+        "analysis" : 10,
+        "answer" : "awesome and perfect",
+        "category" : "hygiene",
+        "question" : "hygeine?"
+      }, {
+        "analysis" : 8,
+        "answer" : "good",
+        "category" : "interaction",
+        "question" : "interaction?"
+      } ]
+    } ],
+    "SchoolAddress" : "Sample Address 0",
+    "SchoolDistrict" : "East Godavari",
+    "SchoolGPS" : {
+      "lat" : 0,
+      "long" : 0
+    },
+    "SchoolID" : "21417",
+    "SchoolName" : "School 0"
+  }, {
+    "Records" : [ {
+      "creationDate" : "2020-08-02",
+      "gpsLocation" : {
+        "lat" : 29.05927123501897,
+        "long" : 77.71888073533773
+      },
+      "officerId" : "666605a8b7ae6bbf",
+      "overallReview" : "good school",
+      "questions" : [ {
+        "analysis" : 7,
+        "answer" : "The rooms were well managed and quite spacious.",
+        "category" : "Infrastructure",
+        "question" : "What are your opinions on the condition of common room/multipurpose hall?"
+      }, {
+        "analysis" : 8,
+        "answer" : "The labs had all the required equipment and were good managed.",
+        "category" : "Infrastructure",
+        "question" : "What are your opinions on the practical labs condition of school?"
+      }, {
+        "analysis" : 7,
+        "answer" : "The library was well managed and filled with relevant equipment.",
+        "category" : "Infrastructure",
+        "question" : "What are your opinions on the library conditions of school?"
+      }, {
+        "analysis" : 6,
+        "answer" : "Yes, it was more than enough.",
+        "category" : "Infrastructure",
+        "question" : "Is the size of classroom sufficient for students?"
+      }, {
+        "analysis" : 8,
+        "answer" : "All students are passing the exam and with good number too ",
+        "category" : "Academic Excellence",
+        "question" : "How is the students performance at board exams?"
+      }, {
+        "analysis" : 7,
+        "answer" : "very good.",
+        "category" : "Academic Excellence",
+        "question" : "How is the students performance at competitive exams?"
+      }, {
+        "analysis" : 6,
+        "answer" : "Yes, the curriculum is inclusive",
+        "category" : "Academic Excellence",
+        "question" : "Is school curriculum helping students for examinations in future?"
+      }, {
+        "analysis" : 6,
+        "answer" : "It is very good.",
+        "category" : "Extra Curricular activities",
+        "question" : "How is the performance of school at district level competitions of music,dance, sports,etc?"
+      }, {
+        "analysis" : 7,
+        "answer" : "Yes , they are very active.",
+        "category" : "Extra Curricular activities",
+        "question" : "Do students enjoy taking part in these activities in school?"
+      }, {
+        "analysis" : 7,
+        "answer" : "Once in a fortnight.",
+        "category" : "Extra Curricular activities",
+        "question" : "How frequently are these activities organised in school?"
+      }, {
+        "analysis" : 8,
+        "answer" : "Teacher are very helpful and kind. students love them ",
+        "category" : "Individual attention",
+        "question" : "What are your opinions on teachers' efforts to help students overcome their weaknesses?"
+      }, {
+        "analysis" : 6,
+        "answer" : "Yes, they are aware of that.",
+        "category" : "Individual attention",
+        "question" : "Does teacher know the strengths/weaknesses of individual students?"
+      }, {
+        "analysis" : 7,
+        "answer" : "Good",
+        "category" : "Life Skills education",
+        "question" : "What are your opinions on students capability to come up with a feasible solution for a problem statement?"
+      }, {
+        "analysis" : 6,
+        "answer" : "Yes, they are very active in this area.",
+        "category" : "Life Skills education",
+        "question" : "Do teachers focus on giving real life problems scenarios to students?"
+      }, {
+        "analysis" : 8,
+        "answer" : "Yes , very good and excellent curriculum",
+        "category" : "Life Skills education",
+        "question" : "Does curriculum help students to think about problems from different perspectives?"
+      }, {
+        "analysis" : 7,
+        "answer" : "Yes , very good and excellent curriculum",
+        "category" : "Life Skills education",
+        "question" : "Does curriculum help students to think about problems from different perspectives?"
+      }, {
+        "analysis" : 8,
+        "answer" : "1 girl for 2 boys.",
+        "category" : "Percentage of female students and faculty",
+        "question" : "What is the sex ratio among students?"
+      }, {
+        "analysis" : 9,
+        "answer" : "1:1. very Good and excellent ratios.",
+        "category" : "Percentage of female students and faculty",
+        "question" : "What is the sex ratio among faculty?"
+      }, {
+        "analysis" : 8,
+        "answer" : "Yes, they are. in excellent and proper condition",
+        "category" : "Facilities for differently abled persons",
+        "question" : "Is facility available for blind students?"
+      }, {
+        "analysis" : 7,
+        "answer" : "Yes, in excellent condition",
+        "category" : "Facilities for differently abled persons",
+        "question" : "Is facility available for mentally weak students?"
+      }, {
+        "analysis" : 3,
+        "answer" : "No, very bad and negative thing.",
+        "category" : "Facilities for differently abled persons",
+        "question" : "Does school curriculum include teaching of sign language?"
+      }, {
+        "analysis" : 6,
+        "answer" : "Positive and good behaviour",
+        "category" : "Values Education",
+        "question" : "How students react on problems which require emotional quotient?"
+      }, {
+        "analysis" : 7,
+        "answer" : "Very good and excellent.",
+        "category" : "Values Education",
+        "question" : "What are your opinions on value education provided by school curriculum?"
+      }, {
+        "analysis" : 8,
+        "answer" : "Yes, good and excellent",
+        "category" : "Values Education",
+        "question" : "Do students have respect for their teachers?"
+      }, {
+        "analysis" : 7,
+        "answer" : "In excellent and positive condition.",
+        "category" : "Hygiene",
+        "question" : "How is the Hygiene?"
+      }, {
+        "analysis" : 7,
+        "answer" : "Good and excellent.",
+        "category" : "Hygiene",
+        "question" : "How is the water quality?"
+      }, {
+        "analysis" : 8,
+        "answer" : "Very good and excellent.",
+        "category" : "Hygiene",
+        "question" : "How is the neatness of the school?"
+      } ]
+    }, {
+      "creationDate" : "2020-08-03",
+      "gpsLocation" : {
+        "lat" : 29.0592221,
+        "long" : 77.7188927
+      },
+      "officerId" : "666605a8b7ae6bbf",
+      "overallReview" : "very positive and good school.",
+      "questions" : [ {
+        "analysis" : 7.5,
+        "answer" : "very good and positive",
+        "category" : "Infrastructure",
+        "question" : "What are your opinions on the condition of common room/multipurpose hall?"
+      }, {
+        "analysis" : 5.333333333333333,
+        "answer" : "they were in good and useable condition",
+        "category" : "Infrastructure",
+        "question" : "What are your opinions on the practical labs condition of school?"
+      }, {
+        "analysis" : 5.75,
+        "answer" : "The books were sufficient and management was excellent.",
+        "category" : "Infrastructure",
+        "question" : "What are your opinions on the library conditions of school?"
+      }, {
+        "analysis" : 10,
+        "answer" : "Strongly Agree",
+        "category" : "Infrastructure",
+        "question" : "Is the size of classroom sufficient for students?"
+      }, {
+        "analysis" : 5,
+        "answer" : "The performance is average and not exceptional.",
+        "category" : "Academic Excellence",
+        "question" : "How is the students performance at board exams?"
+      }, {
+        "analysis" : 7,
+        "answer" : "Performance is excellent and very good.",
+        "category" : "Academic Excellence",
+        "question" : "How is the students performance at competitive exams?"
+      }, {
+        "analysis" : 10,
+        "answer" : "Strongly Agree",
+        "category" : "Academic Excellence",
+        "question" : "Is school curriculum helping students for examinations in future?"
+      }, {
+        "analysis" : 3.333333333333333,
+        "answer" : "The performance is very poor and bad.",
+        "category" : "Extra Curricular activities",
+        "question" : "How is the performance of school at district level competitions of music,dance, sports,etc?"
+      }, {
+        "analysis" : 5.4,
+        "answer" : "They do not. students are not interested and it's very bad",
+        "category" : "Extra Curricular activities",
+        "question" : "Do students enjoy taking part in these activities in school?"
+      }, {
+        "analysis" : 0.5,
+        "answer" : "8 weeks+",
+        "category" : "Extra Curricular activities",
+        "question" : "How frequently are these activities organised in school?"
+      }, {
+        "analysis" : 5.666666666666667,
+        "answer" : "The teacher are very supportive and kind.",
+        "category" : "Individual attention",
+        "question" : "What are your opinions on teachers' efforts to help students overcome their weaknesses?"
+      }, {
+        "analysis" : 10,
+        "answer" : "Strongly Agree",
+        "category" : "Individual attention",
+        "question" : "Does teacher know the strengths/weaknesses of individual students?"
+      }, {
+        "analysis" : 4.75,
+        "answer" : "They would perform well and completely solve the problem.",
+        "category" : "Life Skills education",
+        "question" : "What are your opinions on students capability to come up with a feasible solution for a problem statement?"
+      }, {
+        "analysis" : 5.666666666666667,
+        "answer" : "They do and its a very positive thing.",
+        "category" : "Life Skills education",
+        "question" : "Do teachers focus on giving real life problems scenarios to students?"
+      }, {
+        "analysis" : 10,
+        "answer" : "Strongly Agree",
+        "category" : "Life Skills education",
+        "question" : "Does curriculum help students to think about problems from different perspectives?"
+      }, {
+        "analysis" : 5.75,
+        "answer" : "The students have good knowledge and are well informed",
+        "category" : "Percentage of female students and faculty",
+        "question" : "How is the knowledge of students regarding gender equity?"
+      }, {
+        "analysis" : 7.5,
+        "answer" : "75% - 90%",
+        "category" : "Percentage of female students and faculty",
+        "question" : "What is the sex ratio among students?"
+      }, {
+        "analysis" : 7.5,
+        "answer" : "75% - 90%",
+        "category" : "Percentage of female students and faculty",
+        "question" : "What is the sex ratio among faculty?"
+      }, {
+        "analysis" : 10,
+        "answer" : "Strongly Agree",
+        "category" : "Facilities for differently abled persons",
+        "question" : "Is facility available for blind students?"
+      }, {
+        "analysis" : 10,
+        "answer" : "Strongly Agree",
+        "category" : "Facilities for differently abled persons",
+        "question" : "Is facility available for mentally weak students?"
+      }, {
+        "analysis" : 10,
+        "answer" : "Strongly Agree",
+        "category" : "Facilities for differently abled persons",
+        "question" : "Does school curriculum include teaching of sign language?"
+      }, {
+        "analysis" : 6.75,
+        "answer" : "Their reaction is good and kind and positive.",
+        "category" : "Values Education",
+        "question" : "How students react on problems which require emotional quotient?"
+      }, {
+        "analysis" : 6,
+        "answer" : "The education provided is of high quality and very excellent.",
+        "category" : "Values Education",
+        "question" : "What are your opinions on value education provided by school curriculum?"
+      }, {
+        "analysis" : 10,
+        "answer" : "Strongly Agree",
+        "category" : "Values Education",
+        "question" : "Do students have respect for their teachers?"
+      }, {
+        "analysis" : 6,
+        "answer" : "Exceptionally well and excellent condition.",
+        "category" : "Hygiene",
+        "question" : "How is the Hygiene?"
+      }, {
+        "analysis" : 6.166666666666667,
+        "answer" : "Exceptionally good and clean water. Very positive thing.",
+        "category" : "Hygiene",
+        "question" : "How is the water quality?"
+      }, {
+        "analysis" : 6.5,
+        "answer" : "Very neat and good for student. Excellent",
+        "category" : "Hygiene",
+        "question" : "How is the neatness of the school?"
+      } ]
+    } ],
+    "SchoolAddress" : "Sample Address 1",
+    "SchoolDistrict" : "West Godavari",
+    "SchoolGPS" : {
+      "lat" : 29.059171,
+      "long" : 77.718896
+    },
+    "SchoolID" : "21418",
+    "SchoolName" : "School 1"
+  } ],
+  "School" : [ {
+    "Records" : [ {
+      "creationDate" : "2020-09-13",
+      "gpslocation" : {
+        "lat" : 0,
+        "long" : 0
+      },
+      "officerID" : "12345",
+      "overallReview" : "very good",
+      "questions" : [ {
+        "analysis" : 9,
+        "answer" : "it was good",
+        "category" : "hygiene",
+        "question" : "how's was the hygeine"
+      }, {
+        "analysis" : 8,
+        "answer" : "the interaction was good and lively",
+        "category" : "interaction",
+        "question" : "how was student teacher interaction"
+      } ]
+    }, {
+      "creationDate" : "2020-10-13",
+      "gpslocation" : {
+        "lat" : 0,
+        "long" : 0
+      },
+      "officerID" : "123456",
+      "overallReview" : "below average performance",
+      "questions" : [ {
+        "analysis" : 4,
+        "answer" : "it was bad",
+        "category" : "hygiene",
+        "question" : "how was the hygiene ?"
+      }, {
+        "analysis" : 6,
+        "answer" : "it was above average",
+        "category" : "interaction",
+        "question" : "how was student teacher interaction"
+      } ]
+    }, {
+      "creationDate" : "2020-11-13",
+      "gpslocation" : {
+        "lat" : 0,
+        "long" : 0
+      },
+      "officerID" : "1234567",
+      "overallReview" : "very good",
+      "questions" : [ {
+        "analysis" : 10,
+        "answer" : "it was perfect",
+        "category" : "hygiene",
+        "question" : "how was the hygiene"
+      }, {
+        "analysis" : 8,
+        "answer" : "it was good",
+        "category" : "interaction",
+        "question" : "how was student teacher interaction"
+      } ]
+    }, {
+      "creationDate" : "2020-12-13",
+      "gpslocation" : {
+        "lat" : 0,
+        "long" : 0
+      },
+      "officerID" : "111",
+      "overallReview" : "it was very bad and I didn't like anything about the school, Particularly it's hygiene. the condition was so horrible that I almost puked. Next time they better improve it or i am going to revoke their funding",
+      "questions" : [ {
+        "analysis" : 1,
+        "answer" : "hygiene was worst",
+        "category" : "hygiene",
+        "question" : "how was the hygiene"
+      }, {
+        "analysis" : 4,
+        "answer" : "poor interaction",
+        "category" : "interaction",
+        "question" : "how was interaction"
+      } ]
+    }, {
+      "creationDate" : "2020-12-14",
+      "gpslocation" : {
+        "lat" : 0,
+        "long" : 0
+      },
+      "officerID" : "111",
+      "overallReview" : "it was bad",
+      "questions" : [ {
+        "analysis" : 1,
+        "answer" : "bad",
+        "category" : "hygiene",
+        "question" : "hygiene"
+      }, {
+        "analysis" : 2,
+        "answer" : "it was bad",
+        "category" : "interaction",
+        "question" : "interaction"
+      } ]
+    }, {
+      "creationDate" : "2020-12-15",
+      "gpslocation" : {
+        "lat" : 0,
+        "long" : 0
+      },
+      "officerID" : "1111",
+      "overallReview" : "it was average",
+      "questions" : [ {
+        "analysis" : 5,
+        "answer" : "below average",
+        "category" : "hygiene",
+        "question" : "hygiene?"
+      }, {
+        "analysis" : 7,
+        "answer" : "it was good",
+        "category" : "interaction",
+        "question" : "interaction?"
+      } ]
+    }, {
+      "creationDate" : "2020-12-16",
+      "gpslocation" : {
+        "lat" : 0,
+        "long" : 0
+      },
+      "officerID" : "1111",
+      "overallReview" : "it was very good. they have improved",
+      "questions" : [ {
+        "analysis" : 7,
+        "answer" : "it was good",
+        "category" : "hygiene",
+        "question" : "hygiene?"
+      }, {
+        "analysis" : 8,
+        "answer" : "it was excellent",
+        "category" : "interaction",
+        "question" : "interaction?"
+      } ]
+    }, {
+      "creationDate" : "2020-12-17",
+      "gpslocation" : {
+        "lat" : 0,
+        "long" : 0
+      },
+      "officerID" : "1111",
+      "overallReview" : "it was not that good",
+      "questions" : [ {
+        "analysis" : 8,
+        "answer" : "good",
+        "category" : "hygiene",
+        "question" : "hygiene?"
+      }, {
+        "analysis" : 5,
+        "answer" : "it was average",
+        "category" : "interaction",
+        "question" : "interaction?"
+      } ]
+    }, {
+      "creationDate" : "2020-12-18",
+      "gpslocation" : {
+        "lat" : 0,
+        "long" : 0
+      },
+      "officerID" : "1111",
+      "overallReview" : "it was excellent",
+      "questions" : [ {
+        "analysis" : 10,
+        "answer" : "awesome and perfect",
+        "category" : "hygiene",
+        "question" : "hygeine?"
+      }, {
+        "analysis" : 8,
+        "answer" : "good",
+        "category" : "interaction",
+        "question" : "interaction?"
+      } ]
+    } ],
+    "SchoolAddress" : "Sample Address 0",
+    "SchoolDistrict" : "East Godavari",
+    "SchoolGPS" : {
+      "lat" : 0,
+      "long" : 0
+    },
+    "SchoolID" : "21417",
+    "SchoolName" : "School 0"
+  }, {
+    "Records" : [ {
+      "creationDate" : "2020-08-02",
+      "gpsLocation" : {
+        "lat" : 29.05927123501897,
+        "long" : 77.71888073533773
+      },
+      "officerId" : "666605a8b7ae6bbf",
+      "overallReview" : "good school",
+      "questions" : [ {
+        "analysis" : 7,
+        "answer" : "The rooms were well managed and quite spacious.",
+        "category" : "Infrastructure",
+        "question" : "What are your opinions on the condition of common room/multipurpose hall?"
+      }, {
+        "analysis" : 8,
+        "answer" : "The labs had all the required equipment and were good managed.",
+        "category" : "Infrastructure",
+        "question" : "What are your opinions on the practical labs condition of school?"
+      }, {
+        "analysis" : 7,
+        "answer" : "The library was well managed and filled with relevant equipment.",
+        "category" : "Infrastructure",
+        "question" : "What are your opinions on the library conditions of school?"
+      }, {
+        "analysis" : 6,
+        "answer" : "Yes, it was more than enough.",
+        "category" : "Infrastructure",
+        "question" : "Is the size of classroom sufficient for students?"
+      }, {
+        "analysis" : 8,
+        "answer" : "All students are passing the exam and with good number too ",
+        "category" : "Academic Excellence",
+        "question" : "How is the students performance at board exams?"
+      }, {
+        "analysis" : 7,
+        "answer" : "very good.",
+        "category" : "Academic Excellence",
+        "question" : "How is the students performance at competitive exams?"
+      }, {
+        "analysis" : 6,
+        "answer" : "Yes, the curriculum is inclusive",
+        "category" : "Academic Excellence",
+        "question" : "Is school curriculum helping students for examinations in future?"
+      }, {
+        "analysis" : 6,
+        "answer" : "It is very good.",
+        "category" : "Extra Curricular activities",
+        "question" : "How is the performance of school at district level competitions of music,dance, sports,etc?"
+      }, {
+        "analysis" : 7,
+        "answer" : "Yes , they are very active.",
+        "category" : "Extra Curricular activities",
+        "question" : "Do students enjoy taking part in these activities in school?"
+      }, {
+        "analysis" : 7,
+        "answer" : "Once in a fortnight.",
+        "category" : "Extra Curricular activities",
+        "question" : "How frequently are these activities organised in school?"
+      }, {
+        "analysis" : 8,
+        "answer" : "Teacher are very helpful and kind. students love them ",
+        "category" : "Individual attention",
+        "question" : "What are your opinions on teachers' efforts to help students overcome their weaknesses?"
+      }, {
+        "analysis" : 6,
+        "answer" : "Yes, they are aware of that.",
+        "category" : "Individual attention",
+        "question" : "Does teacher know the strengths/weaknesses of individual students?"
+      }, {
+        "analysis" : 7,
+        "answer" : "Good",
+        "category" : "Life Skills education",
+        "question" : "What are your opinions on students capability to come up with a feasible solution for a problem statement?"
+      }, {
+        "analysis" : 6,
+        "answer" : "Yes, they are very active in this area.",
+        "category" : "Life Skills education",
+        "question" : "Do teachers focus on giving real life problems scenarios to students?"
+      }, {
+        "analysis" : 8,
+        "answer" : "Yes , very good and excellent curriculum",
+        "category" : "Life Skills education",
+        "question" : "Does curriculum help students to think about problems from different perspectives?"
+      }, {
+        "analysis" : 7,
+        "answer" : "Yes , very good and excellent curriculum",
+        "category" : "Life Skills education",
+        "question" : "Does curriculum help students to think about problems from different perspectives?"
+      }, {
+        "analysis" : 8,
+        "answer" : "1 girl for 2 boys.",
+        "category" : "Percentage of female students and faculty",
+        "question" : "What is the sex ratio among students?"
+      }, {
+        "analysis" : 9,
+        "answer" : "1:1. very Good and excellent ratios.",
+        "category" : "Percentage of female students and faculty",
+        "question" : "What is the sex ratio among faculty?"
+      }, {
+        "analysis" : 8,
+        "answer" : "Yes, they are. in excellent and proper condition",
+        "category" : "Facilities for differently abled persons",
+        "question" : "Is facility available for blind students?"
+      }, {
+        "analysis" : 7,
+        "answer" : "Yes, in excellent condition",
+        "category" : "Facilities for differently abled persons",
+        "question" : "Is facility available for mentally weak students?"
+      }, {
+        "analysis" : 3,
+        "answer" : "No, very bad and negative thing.",
+        "category" : "Facilities for differently abled persons",
+        "question" : "Does school curriculum include teaching of sign language?"
+      }, {
+        "analysis" : 6,
+        "answer" : "Positive and good behaviour",
+        "category" : "Values Education",
+        "question" : "How students react on problems which require emotional quotient?"
+      }, {
+        "analysis" : 7,
+        "answer" : "Very good and excellent.",
+        "category" : "Values Education",
+        "question" : "What are your opinions on value education provided by school curriculum?"
+      }, {
+        "analysis" : 8,
+        "answer" : "Yes, good and excellent",
+        "category" : "Values Education",
+        "question" : "Do students have respect for their teachers?"
+      }, {
+        "analysis" : 7,
+        "answer" : "In excellent and positive condition.",
+        "category" : "Hygiene",
+        "question" : "How is the Hygiene?"
+      }, {
+        "analysis" : 7,
+        "answer" : "Good and excellent.",
+        "category" : "Hygiene",
+        "question" : "How is the water quality?"
+      }, {
+        "analysis" : 8,
+        "answer" : "Very good and excellent.",
+        "category" : "Hygiene",
+        "question" : "How is the neatness of the school?"
+      } ]
+    }, {
+      "creationDate" : "2020-08-03",
+      "gpsLocation" : {
+        "lat" : 29.0592221,
+        "long" : 77.7188927
+      },
+      "officerId" : "666605a8b7ae6bbf",
+      "overallReview" : "very positive and good school.",
+      "questions" : [ {
+        "analysis" : 7.5,
+        "answer" : "very good and positive",
+        "category" : "Infrastructure",
+        "question" : "What are your opinions on the condition of common room/multipurpose hall?"
+      }, {
+        "analysis" : 5.333333333333333,
+        "answer" : "they were in good and useable condition",
+        "category" : "Infrastructure",
+        "question" : "What are your opinions on the practical labs condition of school?"
+      }, {
+        "analysis" : 5.75,
+        "answer" : "The books were sufficient and management was excellent.",
+        "category" : "Infrastructure",
+        "question" : "What are your opinions on the library conditions of school?"
+      }, {
+        "analysis" : 10,
+        "answer" : "Strongly Agree",
+        "category" : "Infrastructure",
+        "question" : "Is the size of classroom sufficient for students?"
+      }, {
+        "analysis" : 5,
+        "answer" : "The performance is average and not exceptional.",
+        "category" : "Academic Excellence",
+        "question" : "How is the students performance at board exams?"
+      }, {
+        "analysis" : 7,
+        "answer" : "Performance is excellent and very good.",
+        "category" : "Academic Excellence",
+        "question" : "How is the students performance at competitive exams?"
+      }, {
+        "analysis" : 10,
+        "answer" : "Strongly Agree",
+        "category" : "Academic Excellence",
+        "question" : "Is school curriculum helping students for examinations in future?"
+      }, {
+        "analysis" : 3.333333333333333,
+        "answer" : "The performance is very poor and bad.",
+        "category" : "Extra Curricular activities",
+        "question" : "How is the performance of school at district level competitions of music,dance, sports,etc?"
+      }, {
+        "analysis" : 5.4,
+        "answer" : "They do not. students are not interested and it's very bad",
+        "category" : "Extra Curricular activities",
+        "question" : "Do students enjoy taking part in these activities in school?"
+      }, {
+        "analysis" : 0.5,
+        "answer" : "8 weeks+",
+        "category" : "Extra Curricular activities",
+        "question" : "How frequently are these activities organised in school?"
+      }, {
+        "analysis" : 5.666666666666667,
+        "answer" : "The teacher are very supportive and kind.",
+        "category" : "Individual attention",
+        "question" : "What are your opinions on teachers' efforts to help students overcome their weaknesses?"
+      }, {
+        "analysis" : 10,
+        "answer" : "Strongly Agree",
+        "category" : "Individual attention",
+        "question" : "Does teacher know the strengths/weaknesses of individual students?"
+      }, {
+        "analysis" : 4.75,
+        "answer" : "They would perform well and completely solve the problem.",
+        "category" : "Life Skills education",
+        "question" : "What are your opinions on students capability to come up with a feasible solution for a problem statement?"
+      }, {
+        "analysis" : 5.666666666666667,
+        "answer" : "They do and its a very positive thing.",
+        "category" : "Life Skills education",
+        "question" : "Do teachers focus on giving real life problems scenarios to students?"
+      }, {
+        "analysis" : 10,
+        "answer" : "Strongly Agree",
+        "category" : "Life Skills education",
+        "question" : "Does curriculum help students to think about problems from different perspectives?"
+      }, {
+        "analysis" : 5.75,
+        "answer" : "The students have good knowledge and are well informed",
+        "category" : "Percentage of female students and faculty",
+        "question" : "How is the knowledge of students regarding gender equity?"
+      }, {
+        "analysis" : 7.5,
+        "answer" : "75% - 90%",
+        "category" : "Percentage of female students and faculty",
+        "question" : "What is the sex ratio among students?"
+      }, {
+        "analysis" : 7.5,
+        "answer" : "75% - 90%",
+        "category" : "Percentage of female students and faculty",
+        "question" : "What is the sex ratio among faculty?"
+      }, {
+        "analysis" : 10,
+        "answer" : "Strongly Agree",
+        "category" : "Facilities for differently abled persons",
+        "question" : "Is facility available for blind students?"
+      }, {
+        "analysis" : 10,
+        "answer" : "Strongly Agree",
+        "category" : "Facilities for differently abled persons",
+        "question" : "Is facility available for mentally weak students?"
+      }, {
+        "analysis" : 10,
+        "answer" : "Strongly Agree",
+        "category" : "Facilities for differently abled persons",
+        "question" : "Does school curriculum include teaching of sign language?"
+      }, {
+        "analysis" : 6.75,
+        "answer" : "Their reaction is good and kind and positive.",
+        "category" : "Values Education",
+        "question" : "How students react on problems which require emotional quotient?"
+      }, {
+        "analysis" : 6,
+        "answer" : "The education provided is of high quality and very excellent.",
+        "category" : "Values Education",
+        "question" : "What are your opinions on value education provided by school curriculum?"
+      }, {
+        "analysis" : 10,
+        "answer" : "Strongly Agree",
+        "category" : "Values Education",
+        "question" : "Do students have respect for their teachers?"
+      }, {
+        "analysis" : 6,
+        "answer" : "Exceptionally well and excellent condition.",
+        "category" : "Hygiene",
+        "question" : "How is the Hygiene?"
+      }, {
+        "analysis" : 6.166666666666667,
+        "answer" : "Exceptionally good and clean water. Very positive thing.",
+        "category" : "Hygiene",
+        "question" : "How is the water quality?"
+      }, {
+        "analysis" : 6.5,
+        "answer" : "Very neat and good for student. Excellent",
+        "category" : "Hygiene",
+        "question" : "How is the neatness of the school?"
+      } ]
+    }, {
+      "creationDate" : "2020-08-03",
+      "gpsLocation" : {
+        "lat" : 29.05,
+        "long" : 77.71
+      },
+      "officerId" : "317fd2ce236cba8f",
+      "overallReview" : "good",
+      "questions" : [ {
+        "analysis" : 4,
+        "answer" : "Not really good",
+        "category" : "Infrastructure",
+        "question" : "What are your opinions on the condition of common room/multipurpose hall?"
+      }, {
+        "analysis" : 8,
+        "answer" : "good",
+        "category" : "Infrastructure",
+        "question" : "What are your opinions on the practical labs condition of school?"
+      }, {
+        "analysis" : 8,
+        "answer" : "nice",
+        "category" : "Infrastructure",
+        "question" : "What are your opinions on the library conditions of school?"
+      }, {
+        "analysis" : 7.5,
+        "answer" : "Agree",
+        "category" : "Infrastructure",
+        "question" : "Is the size of classroom sufficient for students?"
+      }, {
+        "analysis" : 6.5,
+        "answer" : "excellent performance",
+        "category" : "Academic Excellence",
+        "question" : "How is the students performance at board exams?"
+      }, {
+        "analysis" : 8,
+        "answer" : "good",
+        "category" : "Academic Excellence",
+        "question" : "How is the students performance at competitive exams?"
+      }, {
+        "analysis" : 7.5,
+        "answer" : "Agree",
+        "category" : "Academic Excellence",
+        "question" : "Is school curriculum helping students for examinations in future?"
+      }, {
+        "analysis" : 8,
+        "answer" : "nice",
+        "category" : "Extra Curricular activities",
+        "question" : "How is the performance of school at district level competitions of music,dance, sports,etc?"
+      }, {
+        "analysis" : 6,
+        "answer" : "yes\n",
+        "category" : "Extra Curricular activities",
+        "question" : "Do students enjoy taking part in these activities in school?"
+      }, {
+        "analysis" : 7.5,
+        "answer" : "4 weeks",
+        "category" : "Extra Curricular activities",
+        "question" : "How frequently are these activities organised in school?"
+      }, {
+        "analysis" : 5.75,
+        "answer" : "teachers are doing good job",
+        "category" : "Individual attention",
+        "question" : "What are your opinions on teachers' efforts to help students overcome their weaknesses?"
+      }, {
+        "analysis" : 10,
+        "answer" : "Strongly Agree",
+        "category" : "Individual attention",
+        "question" : "Does teacher know the strengths/weaknesses of individual students?"
+      }, {
+        "analysis" : 7,
+        "answer" : "positive",
+        "category" : "Life Skills education",
+        "question" : "What are your opinions on students capability to come up with a feasible solution for a problem statement?"
+      }, {
+        "analysis" : 6,
+        "answer" : "yes",
+        "category" : "Life Skills education",
+        "question" : "Do teachers focus on giving real life problems scenarios to students?"
+      }, {
+        "analysis" : 2.5,
+        "answer" : "disagree",
+        "category" : "Life Skills education",
+        "question" : "Does curriculum help students to think about problems from different perspectives?"
+      }, {
+        "analysis" : 8,
+        "answer" : "good",
+        "category" : "Percentage of female students and faculty",
+        "question" : "How is the knowledge of students regarding gender equity?"
+      }, {
+        "analysis" : 7.5,
+        "answer" : "75% - 90%",
+        "category" : "Percentage of female students and faculty",
+        "question" : "What is the sex ratio among students?"
+      }, {
+        "analysis" : 2.5,
+        "answer" : "60% - 75%",
+        "category" : "Percentage of female students and faculty",
+        "question" : "What is the sex ratio among faculty?"
+      }, {
+        "analysis" : 7.5,
+        "answer" : "Agree",
+        "category" : "Facilities for differently abled persons",
+        "question" : "Is facility available for blind students?"
+      }, {
+        "analysis" : 10,
+        "answer" : "Strongly Agree",
+        "category" : "Facilities for differently abled persons",
+        "question" : "Is facility available for mentally weak students?"
+      }, {
+        "analysis" : 7.5,
+        "answer" : "Agree",
+        "category" : "Facilities for differently abled persons",
+        "question" : "Does school curriculum include teaching of sign language?"
+      }, {
+        "analysis" : 7,
+        "answer" : "positive",
+        "category" : "Values Education",
+        "question" : "How students react on problems which require emotional quotient?"
+      }, {
+        "analysis" : 8,
+        "answer" : "good",
+        "category" : "Values Education",
+        "question" : "What are your opinions on value education provided by school curriculum?"
+      }, {
+        "analysis" : 7.5,
+        "answer" : "Agree",
+        "category" : "Values Education",
+        "question" : "Do students have respect for their teachers?"
+      }, {
+        "analysis" : 8,
+        "answer" : "good",
+        "category" : "Hygiene",
+        "question" : "How is the Hygiene?"
+      }, {
+        "analysis" : 8,
+        "answer" : "nice",
+        "category" : "Hygiene",
+        "question" : "How is the water quality?"
+      }, {
+        "analysis" : 8,
+        "answer" : "good",
+        "category" : "Hygiene",
+        "question" : "How is the neatness of the school?"
+      } ]
+    } ],
+    "SchoolAddress" : "Sample Address 1",
+    "SchoolDistrict" : "West Godavari",
+    "SchoolGPS" : {
+      "lat" : 29.05,
+      "long" : 77.71
+    },
+    "SchoolID" : "21418",
+    "SchoolName" : "School 1"
+  } ],
+  "Schools" : [ {
+    "Records" : [ {
+      "CreationDate" : "2020-04-13",
+      "GPSLocation" : {
+        "lat" : 0,
+        "long" : 0
+      },
+      "OfficerID" : 212342,
+      "OverallReview" : "very good school",
+      "questions" : [ {
+        "analysis" : 9.4,
+        "answer" : "a1",
+        "category" : "c1",
+        "question" : "q1"
+      } ]
+    }, {
+      "CreationDate" : "2020-05-13",
+      "GPSLocation" : {
+        "lat" : 0,
+        "long" : 0
+      },
+      "OfficerID" : 212343,
+      "OverallReview" : "good school",
+      "questions" : [ {
+        "analysis" : 9.6,
+        "answer" : "a2",
+        "category" : "c1",
+        "question" : "q2"
+      } ]
+    } ],
+    "SchoolAddress" : "andsdsdsdsewews",
+    "SchoolGPS" : {
+      "lat" : 0,
+      "long" : 0
+    },
+    "SchoolID" : 21414,
+    "SchoolName" : "DPS RK Puram"
+  }, {
+    "Records" : [ {
+      "CreationDate" : "2020-06-13",
+      "GPSLocation" : {
+        "lat" : 0,
+        "long" : 0
+      },
+      "OfficerID" : 212344,
+      "OverallReview" : "Aaryans is good school",
+      "questions" : [ {
+        "analysis" : 8,
+        "answer" : "hygiene is good",
+        "category" : "c1",
+        "question" : "How's the hygiene"
+      } ]
+    }, {
+      "CreationDate" : "2020-07-13",
+      "GPSLocation" : {
+        "lat" : 0,
+        "long" : 0
+      },
+      "OfficerID" : 212345,
+      "OverallReview" : "moderately good school",
+      "questions" : [ {
+        "analysis" : 9,
+        "answer" : "hygiene is excellent",
+        "category" : "c1",
+        "question" : "How's the hygiene?"
+      } ]
+    } ],
+    "SchoolAddress" : "62KM Stone, NH 58",
+    "SchoolGPS" : {
+      "lat" : 0,
+      "long" : 0
+    },
+    "SchoolID" : 21415,
+    "SchoolName" : "The Aaryans"
+  }, {
+    "Records" : [ {
+      "creationDate" : "2020-07-12",
+      "gpslocation" : {
+        "lat" : 0,
+        "long" : 0
+      },
+      "officerID" : "73728274",
+      "overallReview" : "good",
+      "questions" : [ {
+        "analysis" : 8,
+        "answer" : "Good hygiene",
+        "category" : "c1",
+        "question" : "How is the hygiene?"
+      } ]
+    } ],
+    "SchoolAddress" : "Sample Address",
+    "SchoolGPS" : {
+      "lat" : 0,
+      "long" : 0
+    },
+    "SchoolID" : "31212",
+    "SchoolName" : "School Name"
+  }, {
+    "Records" : [ {
+      "creationDate" : "2020-08-13",
+      "gpslocation" : {
+        "lat" : 0,
+        "long" : 0
+      },
+      "officerID" : "1111",
+      "overallReview" : "very good",
+      "questions" : [ {
+        "analysis" : 8,
+        "answer" : "Good hygiene",
+        "category" : "c1",
+        "question" : "How is the hygiene?"
+      } ]
+    } ],
+    "SchoolAddress" : "Sample Address",
+    "SchoolGPS" : {
+      "lat" : 0,
+      "long" : 0
+    },
+    "SchoolID" : "21416",
+    "SchoolName" : "School Name"
+  } ],
+  "parentIndexMap" : {
+    "21417" : 0,
+    "21418" : 0
+  },
+  "schoolIndexMap" : {
+    "21417" : 0,
+    "21418" : 1
+  },
+  "users" : {
+    "317fd2ce236cba8f" : {
+      "deviceId" : "317fd2ce236cba8f",
+      "name" : "Saurabh",
+      "phone" : "8310945403"
+    },
+    "33517f32e624248c" : {
+      "deviceId" : "33517f32e624248c",
+      "name" : "Ajit Mujumdar",
+      "phone" : "8320156667"
+    },
+    "666605a8b7ae6bbf" : {
+      "deviceId" : "666605a8b7ae6bbf",
+      "name" : "Gaurav Ahlawat",
+      "phone" : "8265939602"
+    },
+    "7bb8fcc9615403a7" : {
+      "deviceId" : "7bb8fcc9615403a7",
+      "name" : "Rajeev",
+      "phone" : "8946546643"
+    },
+    "bbe8e9aa81cbf32e" : {
+      "deviceId" : "bbe8e9aa81cbf32e",
+      "name" : "Tushar",
+      "phone" : "7999039797"
+    },
+    "ce65aa7e2065d7ed" : {
+      "deviceId" : "ce65aa7e2065d7ed",
+      "name" : "Gaurav Ahlawat",
+      "phone" : "8265939602"
+    }
+  }
+}
