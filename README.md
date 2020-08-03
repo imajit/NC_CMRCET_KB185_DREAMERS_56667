@@ -19,10 +19,10 @@ Design of GPS enabled online Academic monitoring system to track the classroom t
 
 7.This way the system can’t be cheated and we have solved the problem of the lack of a proper online feedback system.
 
-8.#Impact of the Project : A trustworthy online monitoring and feedback system, can be used to rank and evaluate the performance of the school.
+8.Impact of the Project : A trustworthy online monitoring and feedback system, can be used to rank and evaluate the performance of the school.
 
 
-#How to use application?
+# How to use application?
 
 1.User needs to register firstly giving details like name,mobile number,face image and finger print.
 
@@ -36,5 +36,5 @@ Design of GPS enabled online Academic monitoring system to track the classroom t
 
 6.There is separate app for parents also where parents can give review to schools.
 
-#Dashboard
+# Dashboard
 
