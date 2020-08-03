@@ -71,15 +71,7 @@ class BottomSheetRegister : BottomSheetDialogFragment(),View.OnClickListener {
         buttonRegister.setOnClickListener(this)
 
 
-        var role = arrayOf("Visiting Officer","Parent ","Others")
-        var adapter = ArrayAdapter(
-            requireContext(),
-            R.layout.support_simple_spinner_dropdown_item,
-            role
-        )
-        dropdownRole.threshold = 0;
-        dropdownRole.setAdapter(adapter)
-        dropdownRole.setOnFocusChangeListener { view, b -> if (b) dropdownRole.showDropDown() }
+
     }
 
     override fun onClick(v: View?) {
