@@ -48,6 +48,18 @@ export class PdfMakerComponent implements OnInit {
   public lineChartData: ChartDataSets[] = [
     { data: [], label: 'Scores' },
   ]
+  public lineChartDataC1: ChartDataSets[] = [
+    { data: [],label: 'Scores'}
+  ]
+  public lineChartDataC2: ChartDataSets[] = [{ data: [],label: 'Scores'}]
+  public lineChartDataC3: ChartDataSets[] = [{ data: [],label: 'Scores'}]
+  public lineChartDataC4: ChartDataSets[] = [{ data: [],label: 'Scores'}]
+  public lineChartDataC5: ChartDataSets[] = [{ data: [],label: 'Scores'}]
+  public lineChartDataC6: ChartDataSets[] = [{ data: [],label: 'Scores'}]
+  public lineChartDataC7: ChartDataSets[] = [{ data: [],label: 'Scores'}]
+  public lineChartDataC8: ChartDataSets[] = [{ data: [],label: 'Scores'}]
+  public lineChartDataC9: ChartDataSets[] = [{ data: [],label: 'Scores'}]
+  public lineChartDataC10: ChartDataSets[] = [{ data: [],label: 'Scores'}]
   public lineChartLabels: Label[] = [];
   public lineChartColors: Color[] = [
     {
@@ -138,6 +150,15 @@ export class PdfMakerComponent implements OnInit {
         this.Options = this.getOptions()
         this.detailedSurveyData = this.getReview()
         this.fillOverallData()
+        this.fillHygieneData()
+        this.fillInfrastructureData()
+        this.fillAcademicData()
+        this.fillExtraData()
+        this.fillIndividualData()
+        this.fillLifeData()
+        this.fillPercentageData()
+        this.fillInfraFacilitiesData()
+        this.fillValuesData()
       }
     })
 
@@ -155,6 +176,15 @@ export class PdfMakerComponent implements OnInit {
         this.Options = this.getOptions()
         this.detailedSurveyData = this.getReview()
         this.fillOverallData()
+        this.fillHygieneData()
+        this.fillInfrastructureData()
+        this.fillAcademicData()
+        this.fillExtraData()
+        this.fillIndividualData()
+        this.fillLifeData()
+        this.fillPercentageData()
+        this.fillInfraFacilitiesData()
+        this.fillValuesData()
       }
     })
   }
@@ -179,6 +209,258 @@ export class PdfMakerComponent implements OnInit {
     this.lineChartData[0].data=overallArray;
     this.lineChartData[0].label="Overall Score";
     this.lineChartLabels=labelArray;
+  }
+
+  fillHygieneData(){
+    var dataArray:number[]=[];
+        var labelArray:string[]=[];
+        var finalScore:number=0;
+        if(this.dataReceived.length==1){
+          this.dataReceived[0].Records.forEach( res =>{
+            var analysisValue:number=0;
+            var occur:number = 0;
+            res.questions.forEach(data =>{
+              if(data.category=="Hygiene"){
+                // dataArray.push(data.analysis);
+                analysisValue = analysisValue + data.analysis;
+                occur = occur + 1;
+                
+              }
+            })
+            finalScore = +((analysisValue/occur).toFixed(2));
+            var dd:Date = new Date(res.creationDate);
+            var dateString:string = dd.toLocaleDateString();
+            labelArray.push(dateString.toString());
+            dataArray.push(finalScore);
+          })
+        }
+        this.lineChartDataC1[0].data=dataArray;
+        this.lineChartDataC1[0].label="Hygiene";
+        this.lineChartLabels=labelArray;
+  }
+
+  fillInfrastructureData(){
+    var dataArray:number[]=[];
+        var labelArray:string[]=[];
+        var finalScore:number=0;
+        if(this.dataReceived.length==1){
+          this.dataReceived[0].Records.forEach( res =>{
+            var analysisValue:number=0;
+            var occur:number = 0;
+            res.questions.forEach(data =>{
+              if(data.category=="Infrastructure"){
+                // dataArray.push(data.analysis);
+                analysisValue = analysisValue + data.analysis;
+                occur = occur + 1;
+                
+              }
+            })
+            finalScore = +((analysisValue/occur).toFixed(2));
+            var dd:Date = new Date(res.creationDate);
+            var dateString:string = dd.toLocaleDateString();
+            labelArray.push(dateString.toString());
+            dataArray.push(finalScore);
+          })
+        }
+        this.lineChartDataC2[0].data=dataArray;
+        this.lineChartDataC2[0].label="Infrastructure";
+        this.lineChartLabels=labelArray;
+  }
+
+  fillAcademicData(){
+    var dataArray:number[]=[];
+        var labelArray:string[]=[];
+        var finalScore:number=0;
+        if(this.dataReceived.length==1){
+          this.dataReceived[0].Records.forEach( res =>{
+            var analysisValue:number=0;
+            var occur:number = 0;
+            res.questions.forEach(data =>{
+              if(data.category=="Academic Excellence"){
+                // dataArray.push(data.analysis);
+                analysisValue = analysisValue + data.analysis;
+                occur = occur + 1;
+                
+              }
+            })
+            finalScore = +((analysisValue/occur).toFixed(2));
+            var dd:Date = new Date(res.creationDate);
+            var dateString:string = dd.toLocaleDateString();
+            labelArray.push(dateString.toString());
+            dataArray.push(finalScore);
+          })
+        }
+        this.lineChartDataC3[0].data=dataArray;
+        this.lineChartDataC3[0].label="Academic Excellence";
+        this.lineChartLabels=labelArray;
+  }
+
+  fillExtraData(){
+    var dataArray:number[]=[];
+        var labelArray:string[]=[];
+        var finalScore:number=0;
+        if(this.dataReceived.length==1){
+          this.dataReceived[0].Records.forEach( res =>{
+            var analysisValue:number=0;
+            var occur:number = 0;
+            res.questions.forEach(data =>{
+              if(data.category=="Extra Curricular activities"){
+                // dataArray.push(data.analysis);
+                analysisValue = analysisValue + data.analysis;
+                occur = occur + 1;
+                
+              }
+            })
+            finalScore = +((analysisValue/occur).toFixed(2));
+            var dd:Date = new Date(res.creationDate);
+            var dateString:string = dd.toLocaleDateString();
+            labelArray.push(dateString.toString());
+            dataArray.push(finalScore);
+          })
+        }
+        this.lineChartDataC4[0].data=dataArray;
+        this.lineChartDataC4[0].label="Extra Curricular activities";
+        this.lineChartLabels=labelArray;
+  }
+
+  fillIndividualData(){
+    var dataArray:number[]=[];
+        var labelArray:string[]=[];
+        var finalScore:number=0;
+        if(this.dataReceived.length==1){
+          this.dataReceived[0].Records.forEach( res =>{
+            var analysisValue:number=0;
+            var occur:number = 0;
+            res.questions.forEach(data =>{
+              if(data.category=="Individual attention"){
+                // dataArray.push(data.analysis);
+                analysisValue = analysisValue + data.analysis;
+                occur = occur + 1;
+                
+              }
+            })
+            finalScore = +((analysisValue/occur).toFixed(2));
+            var dd:Date = new Date(res.creationDate);
+            var dateString:string = dd.toLocaleDateString();
+            labelArray.push(dateString.toString());
+            dataArray.push(finalScore);
+          })
+        }
+        this.lineChartDataC5[0].data=dataArray;
+        this.lineChartDataC5[0].label="Individual attention";
+        this.lineChartLabels=labelArray;
+  }
+
+  fillLifeData(){
+    var dataArray:number[]=[];
+        var labelArray:string[]=[];
+        var finalScore:number=0;
+        if(this.dataReceived.length==1){
+          this.dataReceived[0].Records.forEach( res =>{
+            var analysisValue:number=0;
+            var occur:number = 0;
+            res.questions.forEach(data =>{
+              if(data.category=="Life Skills education"){
+                // dataArray.push(data.analysis);
+                analysisValue = analysisValue + data.analysis;
+                occur = occur + 1;
+                
+              }
+            })
+            finalScore = +((analysisValue/occur).toFixed(2));
+            var dd:Date = new Date(res.creationDate);
+            var dateString:string = dd.toLocaleDateString();
+            labelArray.push(dateString.toString());
+            dataArray.push(finalScore);
+          })
+        }
+        this.lineChartDataC6[0].data=dataArray;
+        this.lineChartDataC6[0].label="Life Skills education";
+        this.lineChartLabels=labelArray;
+  }
+
+  fillPercentageData(){
+    var dataArray:number[]=[];
+        var labelArray:string[]=[];
+        var finalScore:number=0;
+        if(this.dataReceived.length==1){
+          this.dataReceived[0].Records.forEach( res =>{
+            var analysisValue:number=0;
+            var occur:number = 0;
+            res.questions.forEach(data =>{
+              if(data.category=="Percentage of female students and faculty"){
+                // dataArray.push(data.analysis);
+                analysisValue = analysisValue + data.analysis;
+                occur = occur + 1;
+                
+              }
+            })
+            finalScore = +((analysisValue/occur).toFixed(2));
+            var dd:Date = new Date(res.creationDate);
+            var dateString:string = dd.toLocaleDateString();
+            labelArray.push(dateString.toString());
+            dataArray.push(finalScore);
+          })
+        }
+        this.lineChartDataC7[0].data=dataArray;
+        this.lineChartDataC7[0].label="Percentage of female students and faculty";
+        this.lineChartLabels=labelArray;
+  }
+
+  fillInfraFacilitiesData(){
+    var dataArray:number[]=[];
+        var labelArray:string[]=[];
+        var finalScore:number=0;
+        if(this.dataReceived.length==1){
+          this.dataReceived[0].Records.forEach( res =>{
+            var analysisValue:number=0;
+            var occur:number = 0;
+            res.questions.forEach(data =>{
+              if(data.category=="Facilities for differently abled persons"){
+                // dataArray.push(data.analysis);
+                analysisValue = analysisValue + data.analysis;
+                occur = occur + 1;
+                
+              }
+            })
+            finalScore = +((analysisValue/occur).toFixed(2));
+            var dd:Date = new Date(res.creationDate);
+            var dateString:string = dd.toLocaleDateString();
+            labelArray.push(dateString.toString());
+            dataArray.push(finalScore);
+          })
+        }
+        this.lineChartDataC8[0].data=dataArray;
+        this.lineChartDataC8[0].label="InfraFacilities for differently abled personsstructure";
+        this.lineChartLabels=labelArray;
+  }
+
+  fillValuesData(){
+    var dataArray:number[]=[];
+        var labelArray:string[]=[];
+        var finalScore:number=0;
+        if(this.dataReceived.length==1){
+          this.dataReceived[0].Records.forEach( res =>{
+            var analysisValue:number=0;
+            var occur:number = 0;
+            res.questions.forEach(data =>{
+              if(data.category=="Values Education"){
+                // dataArray.push(data.analysis);
+                analysisValue = analysisValue + data.analysis;
+                occur = occur + 1;
+                
+              }
+            })
+            finalScore = +((analysisValue/occur).toFixed(2));
+            var dd:Date = new Date(res.creationDate);
+            var dateString:string = dd.toLocaleDateString();
+            labelArray.push(dateString.toString());
+            dataArray.push(finalScore);
+          })
+        }
+        this.lineChartDataC9[0].data=dataArray;
+        this.lineChartDataC9[0].label="Values Education";
+        this.lineChartLabels=labelArray;
   }
 
   // startDate(val){
