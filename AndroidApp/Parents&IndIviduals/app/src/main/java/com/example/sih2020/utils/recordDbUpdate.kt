@@ -27,7 +27,7 @@ var storage = FirebaseStorage.getInstance()
 var sRef = storage.reference
 
 fun updateRecordToDb(schoolIndex: String, record: Records,context: Context){
-    val recRef = dRef.child("School").child(schoolIndex).child("Records")
+    val recRef = dRef.child("Parent").child(schoolIndex).child("Records")
     val builder: AlertDialog.Builder = AlertDialog.Builder(context)
     builder.setCancelable(false)
     builder.setView(R.layout.progress_dialog)
@@ -113,7 +113,7 @@ fun checkGpsRange(schoolIndex: String, record: Records,recordBitmap: Bitmap, con
             }
         }
     }
-    dRef.child("School").child(schoolIndex).child("SchoolGPS").addListenerForSingleValueEvent(listener)
+    dRef.child("Parent").child(schoolIndex).child("SchoolGPS").addListenerForSingleValueEvent(listener)
 }
 
 fun inGpsRange(sGps: gpsCoordinates, rGps: gpsCoordinates): Boolean {
@@ -136,7 +136,8 @@ fun findSchoolAndUpdateRecord(schoolId: String,record: Records,recordBitmap: Bit
         override fun onDataChange(snapshot: DataSnapshot) {
             snapshot.children.forEach {
                 if(it.key.toString() == schoolId ){
-                    checkGpsRange(it.value.toString(),record,recordBitmap,context)
+                    //checkGpsRange(it.value.toString(),record,recordBitmap,context)
+                    faceRecognise(it.value.toString(), record,recordBitmap, context)
                     dialog.dismiss()
                     return
                 }
