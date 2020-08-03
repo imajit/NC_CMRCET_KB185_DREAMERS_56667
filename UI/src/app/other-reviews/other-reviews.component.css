@@ -1,0 +1,36 @@
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 1em;
+  }
+  
+  table.mat-table{
+    border-spacing: 1em;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+  
+  .mat-header-cell{
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  
+  td.mat-cell{
+    border-bottom-width: 0;
+    border-bottom-style: none;
+    padding-left: 1em;
+    border-radius: 1em;
+  }
+  
+  th.mat-header-cell{
+    border-bottom-style: none;
+    padding-left: 1em;
+  }
+  
