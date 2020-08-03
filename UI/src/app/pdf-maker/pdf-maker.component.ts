@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef ,ViewChild} from '@angular/core';
 import * as jspdf from 'jspdf';
 import html2canvas from 'html2canvas';
+import { Color, Label } from 'ng2-charts';
 import { DbModel } from '../shared/models/db.model';
 import { MatTableDataSource } from '@angular/material/table';
 import { FetchDataService } from '../fetch-data.service';
@@ -9,6 +10,9 @@ import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { timeout } from 'rxjs/operators';
 import { DatePipe } from '@angular/common';
+import 'chartjs-plugin-annotation';
+import { ChartDataSets, ChartOptions, plugins } from 'chart.js';
+
 export interface TableData{
   creation_date:Date
   review:string
@@ -41,31 +45,81 @@ export class PdfMakerComponent implements OnInit {
   detailedSurveyTable: string[] = ['Question', 'Answer', 'Anaylsis']
   detailedSurveyData:Review[]
   
-  improvementTable: string[] = ['Category', 'CurrentScore', 'PrevScore','Improve']
-  catergory:string[] = ['Overall Score','Infrastructure','Academic Excellence',
-                          'Extra Curricular Activities','Individual Attention',
-                          'Life Skills Education','Hygiene','Percentage of female students and faculty',
-                          'Facilities for differently abled persons','Values Education']
-  ovs:number=0
-  inf:number=0
-  ace:number=0
-  eca:number=0
-  ind:number=0
-  lyf:number=0
-  hyg:number=0
-  fem:number=0
-  dis:number=0
-  val:number=0
-  povs:number=0
-  pinf:number=0
-  pace:number=0
-  peca:number=0
-  pind:number=0
-  plyf:number=0
-  phyg:number=0
-  pfem:number=0
-  pdis:number=0
-  pval:number=0
+  public lineChartData: ChartDataSets[] = [
+    { data: [], label: 'Scores' },
+  ]
+  public lineChartLabels: Label[] = [];
+  public lineChartColors: Color[] = [
+    {
+      borderColor: '#BACAFE',
+      backgroundColor: '#097BFC',
+    },
+  ]
+  public lineChartLegend = true
+  public lineChartType = 'line'
+  public lineChartPlugins = [{
+    beforeDraw(chart, easing) {
+      const ctx = chart.ctx;
+      const chartArea = chart.chartArea;
+      const top = chartArea.top; // Use a value of 0 here to include the legend
+
+      ctx.save();
+      ctx.fillStyle = '#F3F5FF';
+
+      ctx.fillRect(chartArea.left, top, chartArea.right - chartArea.left, chartArea.bottom - top);
+      ctx.restore();
+    }
+  }]
+  public lineChartOptions:(ChartOptions & {annotation:any})={
+    scales:{
+      yAxes:[{
+        ticks:{
+          max:10,
+          min:0,
+          stepSize:1,
+          beginAtZero:true,
+          showLabelBackdrop:true,
+          fontColor:'#097BFC',
+          fontSize:15
+        },
+        gridLines:{
+          zeroLineColor: '#097BFC',
+          zeroLineWidth: 2.25
+        }
+      }],
+      xAxes:[{
+        ticks:{
+          fontColor:'#097BFC',
+          fontSize:15
+        },
+        gridLines:{
+          zeroLineColor: '#097BFC',
+          zeroLineWidth: 2.25,
+        }
+      }]
+    },
+    elements:{
+      point:{
+        radius:5.5,
+        hitRadius:1,
+        hoverRadius:4,
+        hoverBorderWidth:1,
+        borderWidth:2.25,
+      },
+      line:{
+        tension:0,
+        fill:false,
+
+      }
+    },
+    responsive:false,
+    maintainAspectRatio:false,
+    annotation: {
+      drawTime: 'beforeDatasetsDraw',
+      annotations: [{
+      }]
+  }
+  }
 
   constructor(private fetchData:FetchDataService,private router:Router,private datePipe: DatePipe) { }
 
@@ -83,7 +137,7 @@ export class PdfMakerComponent implements OnInit {
         this.OverallReview = this.dataReceived[0].Records[this.dataReceived[0].Records.length-1].overallReview
         this.Options = this.getOptions()
         this.detailedSurveyData = this.getReview()
-        this.setImproveVals()
+        this.fillOverallData()
       }
     })
 
@@ -100,10 +154,33 @@ export class PdfMakerComponent implements OnInit {
         this.OverallReview = this.dataReceived[0].Records[this.dataReceived[0].Records.length-1].overallReview
         this.Options = this.getOptions()
         this.detailedSurveyData = this.getReview()
-        this.setImproveVals()
+        this.fillOverallData()
       }
     })
   }
+
+  fillOverallData(){
+    var overallArray:number[]=[];
+    var labelArray:string[]=[];
+    if(this.dataReceived.length===1){
+      this.dataReceived[0].Records.forEach(res=>{
+        var score=0;
+        res.questions.forEach(data=>{
+          score= score + data.analysis;
+        })
+        score=score/(res.questions.length);
+        overallArray.push(score);
+        var dd:Date = new Date(res.creationDate);
+        var dateString:string = dd.toLocaleDateString();
+        labelArray.push(dateString);
+
+      })
+    }
+    this.lineChartData[0].data=overallArray;
+    this.lineChartData[0].label="Overall Score";
+    this.lineChartLabels=labelArray;
+  }
+
   // startDate(val){
   //   this.startDateSelected = this.startDateFilterForm.value;    
   // }
@@ -119,25 +196,6 @@ export class PdfMakerComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
-  }
-
-  setImproveVals()
-  {
-      if(this.dataReceived[0].Records.length==1)
-      {
-        this.dataReceived[0].Records.forEach(res=>{
-          res.questions.forEach(ques=>{
-            var cnt=0
-            if(ques.category==="Infrastructure"){
-            this.inf=this.inf+ques.analysis
-            cnt=cnt+1
-            }
-            this.inf=this.inf/cnt})
-          
-            
-          
-        })
-      }
   }
 
   getReview(){

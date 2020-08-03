@@ -24,7 +24,7 @@
     </div>
     </div>
     <hr/>
-    <kendo-pdf-export #pdf paperSize="A4" margin="2cm">
+    <kendo-pdf-export #pdf paperSize="A4" margin="2cm" >
         <div  class="d-flex justify-content-center">
             <h1>School Report</h1> 
          </div>
@@ -58,7 +58,17 @@
           </table>
           <hr/>
           <h2>Improvements</h2>
-          
+          <canvas baseChart
+          [datasets]="lineChartData"
+          [labels]="lineChartLabels"
+          [colors]="lineChartColors"
+          [legend]="lineChartLegend"
+          height="400vh"
+          width="400vw"
+          [chartType]="lineChartType"
+          [plugins]="lineChartPlugins"
+          [options]="lineChartOptions">
+        </canvas>          
 
             </kendo-pdf-export>
 </div>
