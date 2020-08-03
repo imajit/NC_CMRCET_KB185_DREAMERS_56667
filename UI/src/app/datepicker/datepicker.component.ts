@@ -153,6 +153,7 @@ export class DatepickerComponent implements OnInit {
   }
 
   fillOption(){
+    this.options=[];
     this.serverData.forEach(res=>{
       var searchValue = res.SchoolName + " , ID : "+res.SchoolID;
       this.options.push(searchValue);
