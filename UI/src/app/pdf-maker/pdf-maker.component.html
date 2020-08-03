@@ -25,50 +25,52 @@
     </div>
     <hr/>
     <kendo-pdf-export #pdf paperSize="A4" margin="2cm" >
-        <div  class="d-flex justify-content-center">
-            <h1>School Report</h1> 
-         </div>
-         <hr/>
-        <div class="ml-3 mr-3">
-                    <h2 class="customWrap"><b>School Name</b> : {{SchoolName}}</h2>
-                    <h3 class="customWrap"><b>School ID</b> : {{SchoolID}}</h3>
-                    <h3 class="customWrap"><b>Address</b> : {{SchoolAddress}}</h3>
-                    <h3 class="customWrap"><b>District</b> : {{SchoolDistrict}}</h3>
-                    <h3 class="customWrap"><b>Most Recent Review</b> : {{OverallReview}} </h3>
-        </div>
-        <hr/>
-        <h2>Detailed Survey Results</h2>
-        <table mat-table [dataSource]="detailedSurveyData" class="mat-elevation-z8">
-            <ng-container matColumnDef="Question">
-                <th mat-header-cell *matHeaderCellDef> Questions </th>
-                <td mat-cell *matCellDef="let element"> {{element.question}} </td>
-              </ng-container>
-
-              <ng-container matColumnDef="Answer">
-                <th mat-header-cell *matHeaderCellDef> Answer </th>
-                <td mat-cell *matCellDef="let element"> {{element.answer}} </td>
-              </ng-container>
-
-              <ng-container matColumnDef="Anaylsis">
-                <th mat-header-cell *matHeaderCellDef> Anaylsis </th>
-                <td mat-cell *matCellDef="let element"> {{element.analysis}} </td>
-              </ng-container>
-            <tr mat-header-row *matHeaderRowDef="detailedSurveyTable"></tr>
-            <tr mat-row *matRowDef="let row; columns: detailedSurveyTable;"></tr>
-          </table>
+      <div class="mr-3 ml-3">
+          <div  class="d-flex justify-content-center">
+              <h1>School Report</h1> 
+          </div>
           <hr/>
-          <h2>Improvements</h2>
-          <canvas baseChart
-          [datasets]="lineChartData"
-          [labels]="lineChartLabels"
-          [colors]="lineChartColors"
-          [legend]="lineChartLegend"
-          height="400vh"
-          width="400vw"
-          [chartType]="lineChartType"
-          [plugins]="lineChartPlugins"
-          [options]="lineChartOptions">
-        </canvas>          
+          <div>
+                      <h2 class="customWrap"><b>School Name</b> : {{SchoolName}}</h2>
+                      <h3 class="customWrap"><b>School ID</b> : {{SchoolID}}</h3>
+                      <h3 class="customWrap"><b>Address</b> : {{SchoolAddress}}</h3>
+                      <h3 class="customWrap"><b>District</b> : {{SchoolDistrict}}</h3>
+                      <h3 class="customWrap"><b>Most Recent Review</b> : {{OverallReview}} </h3>
+          </div>
+          <hr/>
+          <h2>Detailed Survey Results</h2>
+          <table mat-table [dataSource]="detailedSurveyData" class="mat-elevation-z8">
+              <ng-container matColumnDef="Question">
+                  <th mat-header-cell *matHeaderCellDef> Questions </th>
+                  <td mat-cell *matCellDef="let element"> {{element.question}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Answer">
+                  <th mat-header-cell *matHeaderCellDef> Answer </th>
+                  <td mat-cell *matCellDef="let element"> {{element.answer}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Anaylsis">
+                  <th mat-header-cell *matHeaderCellDef> Anaylsis </th>
+                  <td mat-cell *matCellDef="let element"> {{element.analysis}} </td>
+                </ng-container>
+              <tr mat-header-row *matHeaderRowDef="detailedSurveyTable"></tr>
+              <tr mat-row *matRowDef="let row; columns: detailedSurveyTable;"></tr>
+            </table>
+            <hr/>
+            <h2>Improvements</h2>
+            <canvas baseChart
+            [datasets]="lineChartData"
+            [labels]="lineChartLabels"
+            [colors]="lineChartColors"
+            [legend]="lineChartLegend"
+            height="400vh"
+            width="400vw"
+            [chartType]="lineChartType"
+            [plugins]="lineChartPlugins"
+            [options]="lineChartOptions">
+          </canvas>     
+      </div>     
 
             </kendo-pdf-export>
 </div>
