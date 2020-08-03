@@ -72,4 +72,14 @@
         android:name="com.example.sih2020.fragments.FeedBack"
         android:label="FeedBack"
         tools:layout="@layout/fragment_feed_back" />
+    <fragment
+        android:id="@+id/FAQ"
+        android:name="com.example.sih2020.fragments.FAQ"
+        android:label="Frequently Asked Questions"
+        tools:layout="@layout/fragment_f_a_q" />
+    <fragment
+        android:id="@+id/teamDescription"
+        android:name="com.example.sih2020.fragments.TeamDescription"
+        android:label="Team"
+        tools:layout="@layout/fragment_team_description" />
 </navigation>

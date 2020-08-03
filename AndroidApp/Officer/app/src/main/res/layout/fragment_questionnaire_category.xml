@@ -57,7 +57,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="bottom"
-                        android:textColor="#fff"
+                        android:textColor="@color/Black"
                         android:text="Infrastructure"
                         android:textSize="18sp" />
 
@@ -119,7 +119,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="bottom"
-                        android:textColor="#fff"
+                        android:textColor="@color/Black"
                         android:text="Academic Excellence"
                         android:textSize="18sp" />
 
@@ -181,7 +181,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="bottom"
-                        android:textColor="#fff"
+                        android:textColor="@color/Black"
                         android:text="Extra Curricular activities"
                         android:textSize="18sp" />
 
@@ -244,7 +244,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="bottom"
-                        android:textColor="#fff"
+                        android:textColor="@color/Black"
                         android:text="Individual attention"
                         android:textSize="18sp" />
 
@@ -306,7 +306,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="bottom"
-                        android:textColor="#fff"
+                        android:textColor="@color/Black"
                         android:text="Life Skills education"
                         android:textSize="18sp" />
 
@@ -368,7 +368,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="bottom"
-                        android:textColor="#fff"
+                        android:textColor="@color/Black"
                         android:text="Percentage of female students and faculty"
                         android:textSize="18sp" />
 
@@ -430,7 +430,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="bottom"
-                        android:textColor="#fff"
+                        android:textColor="@color/Black"
                         android:text="Facilities for differently abled persons"
                         android:textSize="18sp" />
 
@@ -492,7 +492,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="bottom"
-                        android:textColor="#fff"
+                        android:textColor="@color/Black"
                         android:text="Values Education"
                         android:textSize="18sp" />
 
