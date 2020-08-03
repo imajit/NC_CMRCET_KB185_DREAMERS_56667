@@ -230,7 +230,7 @@ export class ScoreLineChartComponent implements OnInit {
         res.questions.forEach(data=>{
           score= score + data.analysis;
         })
-        score=score/(res.questions.length);
+        score=+((score/(res.questions.length)).toFixed(2));
         overallArray.push(score);
         var dd:Date = new Date(res.creationDate);
         var dateString:string = dd.toLocaleDateString();
