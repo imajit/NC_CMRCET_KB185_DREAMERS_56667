@@ -4,9 +4,12 @@ import android.Manifest
 import android.app.Activity
 import android.app.AlertDialog
 import android.content.ContentValues.TAG
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.provider.MediaStore
 import android.provider.Settings
@@ -19,6 +22,7 @@ import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
 import com.example.sih2020.R
 import com.example.sih2020.dbClasses.Users
+import com.example.sih2020.utils.NetworkInterceptor
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
@@ -27,7 +31,9 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
+import okhttp3.OkHttpClient
 import java.io.ByteArrayOutputStream
+import java.io.IOException
 
 class BottomSheetRegister : BottomSheetDialogFragment(),View.OnClickListener {
 
@@ -70,11 +76,15 @@ class BottomSheetRegister : BottomSheetDialogFragment(),View.OnClickListener {
             }
 
             R.id.ButtonRegister->apply {
-                if(imageFound){
-                    biometricAuthenticate()
+                if (isInternetAvailable()) {
+                    if (imageFound) {
+                        biometricAuthenticate()
 
+                    } else {
+                        takeImage()
+                    }
                 }else{
-                    takeImage()
+                    Toast.makeText(requireContext(), "Please check the internet Connection", Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -253,6 +263,21 @@ class BottomSheetRegister : BottomSheetDialogFragment(),View.OnClickListener {
             imageFound = true
         }
 
+    }
+    private fun isInternetAvailable():Boolean{
+        var result = false
+        val connectivityManager = requireContext().applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager?
+
+        connectivityManager?.let {
+            it.getNetworkCapabilities(connectivityManager.activeNetwork)?.apply {
+                result = when{
+                    hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)->true
+                    hasTransport(NetworkCapabilities.TRANSPORT_WIFI)->true
+                    else->false
+                }
+            }
+        }
+        return result
     }
 
 

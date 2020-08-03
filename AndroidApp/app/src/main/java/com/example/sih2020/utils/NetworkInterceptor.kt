@@ -1,24 +1,34 @@
 package com.example.sih2020.utils
 
+import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
+import android.os.Message
+import okhttp3.Interceptor
+import okhttp3.Response
+import java.io.IOException
 
 
-/**
- * Check if the device is connected to any internet source (mobile data, WiFi or ethernet)
- */
-fun ConnectivityManager.isNetworkAvailable(): Boolean =
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-        val network = this.activeNetwork
-        getNetworkCapabilities(network)?.run {
-            when {
-                hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ||
-                        hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) ||
-                        hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> true
-                else -> false
-            }
-        } ?: false
-    } else {
-        activeNetworkInfo?.isConnectedOrConnecting ?: false
+class NetworkInterceptor(context: Context): Interceptor{
+
+    private val applicationContext= context.applicationContext
+
+    override fun intercept(chain: Interceptor.Chain): Response {
+        if (!isInternetAvailable())
+            throw NOInternetException("Make sure You have an Active internet connection")
+
+        return chain.proceed(chain.request())
     }
+
+    private fun isInternetAvailable():Boolean{
+
+        val connectivityManager = applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+
+        connectivityManager.activeNetworkInfo.also {
+            return it != null && it.isConnected
+        }
+    }
+
+    class NOInternetException(message: String):IOException(message)
+}

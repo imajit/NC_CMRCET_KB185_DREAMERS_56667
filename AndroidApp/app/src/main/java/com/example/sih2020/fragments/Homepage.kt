@@ -1,6 +1,9 @@
 package com.example.sih2020.fragments
 
 import android.app.AlertDialog
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.LayoutInflater
@@ -76,11 +79,17 @@ class Homepage : Fragment(), View.OnClickListener {
 
             R.id.RegisterUser -> apply {
                 fragmentManager?.let {
-                    BottomSheetRegister().show(
-                        it,
-                        ""
-                    )
+                    if (isInternetAvailable()) {
+                        BottomSheetRegister().show(
+                            it,
+                            ""
+                        )
+                    }
+                    else{
+                        Toast.makeText(requireContext(), "No Internet Available", Toast.LENGTH_SHORT).show()
+                    }
                 }
+
             }
 
             R.id.cardview_oldsurvey -> {
@@ -121,6 +130,21 @@ class Homepage : Fragment(), View.OnClickListener {
 
 
         }
+    }
+    private fun isInternetAvailable():Boolean{
+        var result = false
+        val connectivityManager = requireContext().applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager?
+
+        connectivityManager?.let {
+            it.getNetworkCapabilities(connectivityManager.activeNetwork)?.apply {
+                result = when{
+                    hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)->true
+                    hasTransport(NetworkCapabilities.TRANSPORT_WIFI)->true
+                    else->false
+                }
+            }
+        }
+        return result
     }
 
 
