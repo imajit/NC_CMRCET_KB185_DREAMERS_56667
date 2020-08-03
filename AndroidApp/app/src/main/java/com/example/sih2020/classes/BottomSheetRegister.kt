@@ -17,6 +17,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
@@ -31,6 +32,8 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
+import kotlinx.android.synthetic.main.bottomsheetregister.*
+import kotlinx.android.synthetic.main.fragment_feed_back.*
 import okhttp3.OkHttpClient
 import java.io.ByteArrayOutputStream
 import java.io.IOException
@@ -66,6 +69,17 @@ class BottomSheetRegister : BottomSheetDialogFragment(),View.OnClickListener {
         buttonImage = view.findViewById(R.id.ButtonImage)
         buttonImage.setOnClickListener(this)
         buttonRegister.setOnClickListener(this)
+
+
+        var role = arrayOf("Visiting Officer","Parent ","Others")
+        var adapter = ArrayAdapter(
+            requireContext(),
+            R.layout.support_simple_spinner_dropdown_item,
+            role
+        )
+        dropdownRole.threshold = 0;
+        dropdownRole.setAdapter(adapter)
+        dropdownRole.setOnFocusChangeListener { view, b -> if (b) dropdownRole.showDropDown() }
     }
 
     override fun onClick(v: View?) {

@@ -61,11 +61,7 @@
         android:id="@+id/questionnaireCategoryFragment"
         android:name="com.example.sih2020.fragments.QuestionnaireCategoryFragment"
         android:label="Question Category"
-        tools:layout="@layout/fragment_questionnaire_category" >
-        <action
-            android:id="@+id/CategoryToQuestions"
-            app:destination="@id/questionnaireFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_questionnaire_category" />
     <fragment
         android:id="@+id/MCQAnswerFragment"
         android:name="com.example.sih2020.fragments.MCQAnswerFragment"

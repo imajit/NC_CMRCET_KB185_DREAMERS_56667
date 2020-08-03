@@ -48,47 +48,7 @@ class QuestionnaireCategoryFragment : BaseFragment(), View.OnClickListener {
     }
 
     override fun onClick(view: View?) {
-        when(view?.id)
-        {
-          R.id.MaterialCardViewQuestionCategoryInfra->{
-              val bundle = bundleOf("Infrastructure" to 1)
-              navController!!.navigate(R.id.CategoryToQuestions,bundle)
-          }
-            R.id.MaterialCardViewQuestionCategoryAcademic->{
-                val bundle = bundleOf("Infrastructure" to 2);
-                navController!!.navigate(R.id.CategoryToQuestions)
-            }
-            R.id.MaterialCardViewQuestionCategoryExtraCurricular->{
-                val bundle = bundleOf("Infrastructure" to 3);
-                navController!!.navigate(R.id.CategoryToQuestions)
-            }
-            R.id.MaterialCardViewQuestionCategoryIndividualAttention->{
-                val bundle = bundleOf("Infrastructure" to 4);
-                navController!!.navigate(R.id.CategoryToQuestions)
-            }
-            R.id.MaterialCardViewQuestionCategoryLifeSkills->{
-                val bundle = bundleOf("Infrastructure" to 5);
-                navController!!.navigate(R.id.CategoryToQuestions)
-            }
-            R.id.MaterialCardViewQuestionCategoryFemale->{
-                val bundle = bundleOf("Infrastructure" to 6);
-                navController!!.navigate(R.id.CategoryToQuestions)
-            }
-            R.id.MaterialCardViewQuestionCategoryDifferentlyAbled->{
-                val bundle = bundleOf("Infrastructure" to 7);
-                navController!!.navigate(R.id.CategoryToQuestions)
-            }
-            R.id.MaterialCardViewQuestionCategoryValueEducation->{
-                val bundle = bundleOf("Infrastructure" to 8);
-
-                navController!!.navigate(R.id.CategoryToQuestions)
-            }
-
-
-
-
-        }
+    }
     }
 
 
-}

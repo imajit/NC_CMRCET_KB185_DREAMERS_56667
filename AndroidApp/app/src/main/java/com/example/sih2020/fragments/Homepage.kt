@@ -54,7 +54,6 @@ class Homepage : Fragment(), View.OnClickListener {
         view.findViewById<MaterialCardView>(R.id.cardview_oldsurvey).setOnClickListener(this)
         view.findViewById<MaterialCardView>(R.id.seePreviousSurvey).setOnClickListener(this)
         view.findViewById<MaterialCardView>(R.id.RegisterUser).setOnClickListener(this)
-        view.findViewById<TextView>(R.id.textGrid).setOnClickListener(this)
 
 
         /***
@@ -124,9 +123,9 @@ class Homepage : Fragment(), View.OnClickListener {
 
             }
 
-            R.id.seePreviousSurvey -> navController!!.navigate(R.id.homeToQuestionList)
+            R.id.seePreviousSurvey -> navController!!.navigate(R.id.Test)
 
-            R.id.textGrid -> navController!!.navigate(R.id.HomeToMCQ)
+
 
 
         }
