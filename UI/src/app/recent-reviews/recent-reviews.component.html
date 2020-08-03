@@ -1,4 +1,10 @@
 <div *ngIf="this.dataReceived.length!==1" class="mt-3 mb-3">
+  <h2
+  #tooltip="matTooltip"
+  matTooltip="The following table shows the recently conducted surveys"
+  style="width: fit-content;">
+    Recent School Reviews
+  </h2>
   <div class="row">
     <div class="col-md-6">
       <mat-form-field>

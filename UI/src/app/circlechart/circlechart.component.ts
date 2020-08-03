@@ -17,7 +17,7 @@ export class CirclechartComponent implements OnInit {
   public canvasWidth = 300
   public needleValue = 65
   public centralLabel = ''
-  public name = 'Score'
+  public name = 'Overall School Score'
   public bottomLabel = '7.0'
   public options = {
       arcColors: ['rgb(63, 81, 181)', 'lightgray'],
