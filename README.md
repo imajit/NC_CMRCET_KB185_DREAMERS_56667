@@ -38,6 +38,8 @@ Design of GPS enabled online Academic monitoring system to track the classroom t
 
 6.There is separate app for parents also where parents can give review to schools.
 
+7. There is offline capabilities as well which stores the survey data when offline and the users can upload the survey when the internet connectivity restores
+
 # Dashboard
 
 ## Build
