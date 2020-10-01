@@ -30,7 +30,16 @@ Design of GPS enabled online Academic monitoring system to track the classroom t
 
 2.Next go to Fill Survey Method, add a valid School ID and take a photo of yourself,this photo will be matched with the photo uploaded at the time of registration. Also the user can’t select a photo from gallery, he has to open the camera and click the photo in real time.GPS snapshot of the current location is also taken so that it is verified that user is present in the school.
 
-3.Then user has to go to questionnaires where all the questions will be shown to user where they can submit answers.There are 9 categories of questions which are infrastructure,academic excellence,extra-curricular activities,individual attention,life skills education,percentage of female students and faculty,facilities for differently abled persons,values education and hygiene.
+3.Then user has to go to questionnaires where all the questions will be shown to user where they can submit answers.There are 9 categories of questions which are 
+* infrastructure
+* academic excellence
+* extra-curricular activities
+* individual attention
+* life skills education
+* percentage of female students and faculty
+* facilities for differently abled persons
+* values education
+* hygiene.
 
 4.Questions are both subjective as well as objective type.
 
@@ -38,7 +47,7 @@ Design of GPS enabled online Academic monitoring system to track the classroom t
 
 6.There is separate app for parents also where parents can give review to schools.
 
-7. There is offline capabilities as well which stores the survey data when offline and the users can upload the survey when the internet connectivity restores
+7.There is offline capabilities as well which stores the survey data when offline and the users can upload the survey when the internet connectivity restores
 
 # Dashboard
 
