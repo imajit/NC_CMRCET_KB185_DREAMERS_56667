@@ -1,7 +1,7 @@
 # NC_CMRCET_KB185_DREAMERS_56667
 Smart India Hackacthon Problem Statement.<br>
-PPT Link :- https://docs.google.com/presentation/d/12xgqJj5NMbCtr-TLWluyenP1ngB59AIcaHkh0HDI1Ws/edit?usp=sharing <br>
-Demo Video Link :- https://youtu.be/nyINPDJ6I-U
+PPT Link :-[Click here](https://docs.google.com/presentation/d/12xgqJj5NMbCtr-TLWluyenP1ngB59AIcaHkh0HDI1Ws/edit?usp=sharing)<br>
+Demo Video Link :- [Click here](https://youtu.be/nyINPDJ6I-U)
 
 # Problem Statement
 Design of GPS enabled online Academic monitoring system to track the classroom transaction and to provide feedback and the review to the teachers to improve their pedagogical practices by the monitoring authorities.
