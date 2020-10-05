@@ -13,7 +13,7 @@ Design of GPS enabled online Academic monitoring system to track the classroom t
 
 3.To counter that we are proposing an Online centralized feedback system, which solves all the shortcomings of the offline system.  
 
-4.We have designed and made both an Android App and an iOS App to conduct out the surveys.
+4.We have designed and made both an Android App and an iOS App to conduct out the surveys. We have also designed a dashboard where the input data from the survey can be analysed in different ways.
 
 5.The App uses the combination of Face Picture and biometrics to authenticate the user. We also capture the GPS location of the user while he/she is submitting the survey. If he’s/she’s within the School GPS range, we approve of the survey and records that survey, otherwise we can tell that he’s trying to cheat the system. The Combination of GPS+Face Photo + Biometric is unbreakable and can’t be bypassed.
 
